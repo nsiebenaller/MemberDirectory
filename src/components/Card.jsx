@@ -9,7 +9,7 @@ export class Card extends Component {
             <span className="card-executor">{this.props.executor}</span>
             <span className="card-remove" onClick={() => this.props.onRemoveClick(this.props.id)}>-</span>
         </div>
-    );
-};
+    )
+  }
 
 }

@@ -22,7 +22,9 @@
         "redux-connect-decorator": "^0.2.0",
         "redux-logger": "^3.0.6",
         "redux-promise": "^0.6.0",
-        "redux-thunk": "^2.3.0"
+        "redux-thunk": "^2.3.0",
+        "less": "^2.7.3",
+        "less-loader": "^2.2.3"
     },
     "devDependencies": {
         "babel-core": "^6.25.0",
@@ -32,7 +34,7 @@
         "babel-plugin-transform-object-rest-spread": "^6.26.0",
         "babel-preset-env": "^1.6.0",
         "babel-preset-react": "^6.24.1",
-        "css-loader": "^0.28.4",
+        "css-loader": "^0.28.11",
         "style-loader": "^0.18.2",
         "webpack": "^3.3.0",
         "webpack-dev-server": "^2.5.1"

@@ -1,24 +1,54 @@
 let nextTaskId = 0;
 
-export const addTask = ({ text, executor }) => {
-    return {
+export function addTask({ text, executor }) {
+  return (dispatch, getState) => {
+    const state = getState()
+    const arr = state.tasks.concat({
+      "id": state.tasks.length,
+      "executor": executor,
+      "text": text,
+      "status": "TODO"},
+    )
+    dispatch({
         type: 'ADD_TASK',
-        id: (nextTaskId++).toString(),
-        text,
-        executor
-    };
-};
+        payload: arr
+    })
+  }
+}
 
 export const removeTask = (id) => {
-    return {
+return (dispatch, getState) => {
+  const state = getState()
+  const arr = state.tasks.filter(x => x.id !== id)
+    dispatch({
         type: 'REMOVE_TASK',
-        id
-    };
+        payload: arr
+    })
+  }
 };
 
 export const changeTaskStatus = (id) => {
-    return {
-        type: 'CHANGE_TASK_STATUS',
-        id
-    };
+  return (dispatch, getState) => {
+    const state = getState()
+    const statuses = ['TODO', 'DOING', 'DONE']
+    const { tasks } = state
+
+    const arr = tasks.filter(x => x.id !== id)
+    const task = tasks.filter(x => x.id === id)
+    if(task.length > 0) {
+      const index = statuses.indexOf(task[0].status)
+      if(index === 2) {
+        task[0].status = statuses[0]
+      }
+      else {
+        task[0].status = statuses[index + 1]
+      }
+      arr.push(task[0])
+
+      dispatch({
+          type: 'CHANGE_TASK_STATUS',
+          payload: arr
+      })
+    }
+  }
 };
