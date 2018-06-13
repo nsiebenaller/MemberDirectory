@@ -1,34 +1,53 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addTask } from '../actions';
+import * as actionCreators from '../actions/index'
 
-const AddTask = ({ dispatch, state }) => {
-    let inputText, inputExecutor;
 
-    const submitTask = (e) => {
-        e.preventDefault();
+@connect(state => ({}), Object.assign({}, actionCreators))
+export class AddTask extends Component {
+    constructor(props) {
+      super(props)
 
-        if (!inputText.value.trim())
-            return;
-            
-        dispatch(addTask({
-            text: inputText.value,
-            executor: inputExecutor.value.trim() ? inputExecutor.value : 'All'
-        }));
+      this.submitTask = this.submitTask.bind(this);
 
-        inputText.value = '';
-        inputExecutor.value = '';
-    };
+      this.state = {
+        inputText: '',
+        inputExecutor: ''
+      }
+    }
 
-    return (
-        <div className="form-container">
-            <form onSubmit={submitTask}>
-                <input className="task-form-text" placeholder="New task..." ref={node => inputText = node} />
-                <input className="task-form-executor" placeholder="Who..." ref={node => inputExecutor = node} />
-                <input className="task-form-submit" type="submit" value="Add"/>
-            </form>
-        </div>
-    );
+    submitTask(e) {
+      e.preventDefault()
+      if (!this.state.inputText.trim())
+        return
+      this.props.addTask({
+        text: this.state.inputText,
+        executor: this.state.inputExecutor.trim() ? this.state.inputExecutor : 'All'
+      })
+      this.setState({
+        inputText: '',
+        inputExecutor: ''
+      })
+    }
+
+
+    render() {
+      return (
+          <div className="form-container">
+              <form onSubmit={(e) => this.submitTask(e)}>
+                  <input className="task-form-text"
+                    placeholder="New task..."
+                    value={this.state.inputText}
+                    onChange={(e) => this.setState({inputText: e.target.value})}
+                  />
+                  <input className="task-form-executor"
+                    placeholder="Who..."
+                    value={this.state.inputExecutor}
+                    onChange={(e) => this.setState({inputExecutor: e.target.value})}
+                  />
+                  <input className="task-form-submit" type="submit" value="Add"/>
+              </form>
+          </div>
+      )}
 };
-
-export default connect()(AddTask);

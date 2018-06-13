@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-
 @connect(state => ({
   cardsCount: state.tasks.length
 }), Object.assign({}, {}, {}))

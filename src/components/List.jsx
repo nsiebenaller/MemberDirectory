@@ -17,7 +17,6 @@ export class List extends Component {
   }
 
   render() {
-    console.log(this.props.tasks)
     return (
       <div className={`list ${this.props.status.toLowerCase()}-list`}>
           <h5>{this.props.status}<span>{this.props.tasks.filter(x => x.status === this.props.status).length}</span></h5>

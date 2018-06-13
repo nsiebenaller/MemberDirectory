@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import {List} from './List.jsx';
 
 
-
 export class Board extends Component {
 
 render(){

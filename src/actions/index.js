@@ -1,5 +1,3 @@
-let nextTaskId = 0;
-
 export function addTask({ text, executor }) {
   return (dispatch, getState) => {
     const state = getState()
@@ -34,16 +32,16 @@ export const changeTaskStatus = (id) => {
     const { tasks } = state
 
     const arr = tasks.filter(x => x.id !== id)
-    const task = tasks.filter(x => x.id === id)
-    if(task.length > 0) {
-      const index = statuses.indexOf(task[0].status)
+    const task = (tasks.filter(x => x.id === id).length > 0) ? (tasks.filter(x => x.id === id)[0]) : (false)
+    if(task) {
+      const index = statuses.indexOf(task.status)
       if(index === 2) {
-        task[0].status = statuses[0]
+        task.status = statuses[0]
       }
       else {
-        task[0].status = statuses[index + 1]
+        task.status = statuses[index + 1]
       }
-      arr.push(task[0])
+      arr.push(task)
 
       dispatch({
           type: 'CHANGE_TASK_STATUS',
