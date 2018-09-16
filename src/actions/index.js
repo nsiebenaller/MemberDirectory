@@ -1,4 +1,4 @@
-export function addTask({ text, executor }) {
+export const addTask = ({ text, executor}) => {
   return (dispatch, getState) => {
     const state = getState()
     const arr = state.tasks.concat({
@@ -15,9 +15,9 @@ export function addTask({ text, executor }) {
 }
 
 export const removeTask = (id) => {
-return (dispatch, getState) => {
-  const state = getState()
-  const arr = state.tasks.filter(x => x.id !== id)
+  return (dispatch, getState) => {
+    const state = getState()
+    const arr = state.tasks.filter(x => x.id !== id)
     dispatch({
         type: 'REMOVE_TASK',
         payload: arr
