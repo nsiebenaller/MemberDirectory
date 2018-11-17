@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import Title from './Title.js';
-import {AddTask} from './AddTask';
-import Board from './Board.js';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Switch, Route } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
+import NewUserForm from './NewUserForm/index.jsx'
+import Login from './Login/index.jsx'
+import Dashboard from './Dashboard/index.jsx'
 import * as actionCreators from '../actions/index'
 
 @connect(state => ({
-  tasks: state.tasks
 }), Object.assign({}, actionCreators))
 export class App extends Component {
 render() {
@@ -16,15 +17,13 @@ render() {
     changeTaskStatus
   } = this.props
   return (
-    <div>
-      <Title cardsCount={tasks.length}/>
-      <AddTask />
-      <Board
-        tasks={tasks}
-        onChangeClick={changeTaskStatus}
-        onRemoveClick={removeTask}
-      />
-    </div>
+      <BrowserRouter>
+      <Switch>
+        <Route exact path='/' component={Login}/>
+        <Route path='/new' component={NewUserForm}/>
+        <Route path='/dashboard' component={Dashboard}/>
+      </Switch>
+      </BrowserRouter>
     )};
 
 }
