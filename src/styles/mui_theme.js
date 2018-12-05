@@ -42,21 +42,16 @@ const customTheme = {
     },
     MuiOutlinedInput: {
       root: {
-        fontSize: 16,
-        height: 45,
       },
       inputMarginDense: {
-        padding: 13,
-        paddingTop: 10,
-        paddingBottom: 10,
       },
     },
   },
   palette: {
     primary: {
-      light: '#14b4fc',
-      main: '#03a9f4',
-      dark: '#0398db',
+      light: '#9C27B0',
+      main: '#7B1FA2',
+      dark: '#4A148C',
       contrastText: '#FFFFFF',
     },
     secondary: {

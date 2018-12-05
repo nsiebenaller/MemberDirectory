@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Axios from 'axios'
-import {TextField, Button} from '@material-ui/core'
+import {TextField, Button, Card, CardContent } from '@material-ui/core'
 import { login } from '../../actions/auth.js'
 import { getMembers } from '../../actions/index'
 
@@ -42,35 +42,45 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="login-container">
-        <TextField
-          label="Username"
-          value={this.state.username}
-          onChange={e => this.setState({username: e.target.value})}
-          margin="normal"
-          variant="outlined"
-        />
-        <TextField
-          label="Password"
-          type="password"
-          value={this.state.password}
-          onChange={e => this.setState({password: e.target.value})}
-          margin="normal"
-          variant="outlined"
-        />
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={this.handleLogin}
-      >Login</Button>
-      {
-        this.state.error && (
-          <div className="error-text">
-            Incorrect Username/Password
-          </div>
-        )
-      }
+      <div className="app-background">
+      <div className="blue-bg">
+        <div className="login-container">
+          <Card>
+            <CardContent>
+              <b>Fox River Membership Directory</b>
+            <TextField
+              label="Username"
+              value={this.state.username}
+              onChange={e => this.setState({username: e.target.value})}
+              margin="normal"
+              variant="outlined"
+            />
+            <TextField
+              label="Password"
+              type="password"
+              value={this.state.password}
+              onChange={e => this.setState({password: e.target.value})}
+              margin="normal"
+              variant="outlined"
+            />
+          <br />
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={this.handleLogin}
+          >Login</Button>
+          {
+            this.state.error && (
+              <div className="error-text">
+                Incorrect Username/Password
+              </div>
+            )
+          }
+        </CardContent>
+        </Card>
+        </div>
       </div>
+</div>
     )
   }
 }

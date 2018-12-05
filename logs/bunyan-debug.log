@@ -106,3 +106,38 @@
 {"name":"general-log","hostname":"ORIGINAL","pid":28176,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-11-17T18:07:28.637Z","v":0}
 {"name":"general-log","hostname":"ORIGINAL","pid":37256,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-11-17T18:48:23.321Z","v":0}
 {"name":"general-log","hostname":"ORIGINAL","pid":37256,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-11-17T18:48:23.337Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":84768,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-11-30T00:14:40.158Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":84768,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-11-30T00:14:40.161Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":86612,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-11-30T00:24:24.561Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":86612,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-11-30T00:24:24.564Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":5696,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-11-30T00:28:31.609Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":5696,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-11-30T00:28:31.609Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":12052,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-11-30T00:30:39.570Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":12052,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-11-30T00:30:39.570Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":2708,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-11-30T00:32:44.143Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":2708,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-11-30T00:32:44.143Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":9088,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-11-30T00:58:24.272Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":9088,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-11-30T00:58:24.273Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":13080,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-12-05T01:36:18.459Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":13080,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-12-05T01:36:18.460Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":24564,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-12-05T01:45:51.537Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":24564,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-12-05T01:45:51.538Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":14588,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-12-05T01:50:06.442Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":14588,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-12-05T01:50:06.444Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":6684,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-12-05T01:50:56.870Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":6684,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-12-05T01:50:56.872Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":30292,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-12-05T01:54:37.806Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":30292,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-12-05T01:54:37.807Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":32896,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-12-05T02:00:51.145Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":32896,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-12-05T02:00:51.146Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":21452,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-12-05T02:07:51.601Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":21452,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-12-05T02:07:51.604Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":25188,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2018-12-05T02:08:23.969Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":25188,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-12-05T02:08:23.971Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":25188,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-12-05T02:08:23.971Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":17580,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2018-12-05T02:10:01.561Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":17580,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-12-05T02:10:01.563Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":17580,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-12-05T02:10:01.563Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":31684,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2018-12-05T02:11:29.446Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":31684,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-12-05T02:11:29.447Z","v":0}
+{"name":"general-log","hostname":"ORIGINAL","pid":31684,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-12-05T02:11:29.447Z","v":0}
