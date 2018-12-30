@@ -1,5 +1,9 @@
 'use strict'
 
+// env
+require('dotenv').config()
+const {IS_DEV} = process.env
+
 // dependencies
 const Promise = require('bluebird')
 const log = require('./logger.js')
@@ -7,8 +11,7 @@ const path = require('path')
 const express = require('express')
 const webpack = require('webpack')
 const jwt = require('express-jwt')
-require('dotenv').config()
-const {IS_DEV} = process.env
+
 
 const app = express()
 

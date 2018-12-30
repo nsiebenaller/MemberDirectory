@@ -1,19 +1,19 @@
-import React from 'react';
-import { render } from 'react-dom';
-import {createStore, applyMiddleware, combineReducers} from 'redux';
-import { Provider } from 'react-redux';
-import {createLogger} from 'redux-logger';
-import thunk from 'redux-thunk';
-import promise from 'redux-promise';
+import React from 'react'
+import { render } from 'react-dom'
+import {createStore, applyMiddleware, combineReducers} from 'redux'
+import { Provider } from 'react-redux'
+import {createLogger} from 'redux-logger'
+import thunk from 'redux-thunk'
+import promise from 'redux-promise'
 import { MuiThemeProvider } from '@material-ui/core/styles'
-import styles from './styles/index.less';
+import styles from './styles/index.less'
 import theme from './styles/mui_theme.js'
-import reducers from './reducers/index';
-import {App} from './components/App.jsx';
-import initialData from '../data';
+import reducers from './reducers/index'
+import {App} from './components/App.jsx'
+import initialState from './initialState.js'
 
-const logger = createLogger();
-const store = configureStore({general: {members: []}})
+const logger = createLogger()
+const store = configureStore(initialState)
 
 render(
     <MuiThemeProvider theme={theme}>

@@ -36,7 +36,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       membership_date: {
-        type: Sequelize.DATE
+        type: Sequelize.STRING
       },
       status: {
         type: Sequelize.STRING

@@ -11,7 +11,13 @@ export function storeParam(obj) {
 export function getMembers() {
   return async (dispatch, getState) => {
     const reply = await call('GET', '/api/members')
-    console.log("retrieved", reply.data)
-    dispatch(storeParam({members: reply.data}))
+    //console.log("retrieved", reply.data)
+    const updated = reply.data.map((person) => ({
+      ...person,
+      birth_month: (person.birth_date) ? parseInt(person.birth_date.split("/")[0]) : null,
+      birth_day: (person.birth_date) ? parseInt(person.birth_date.split("/")[1]) : null,
+      birth_year: (person.birth_year) ? parseInt(person.birth_year) : null
+    }))
+    dispatch(storeParam({members: updated}))
   }
 }
