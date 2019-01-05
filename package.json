@@ -4,6 +4,7 @@
     "description": "Minimal React.js starter kit for experiments.",
     "main": "./src/index.jsx",
     "scripts": {
+	"build-server": "babel -d ./build ./server -s",
         "build": "webpack --mode production",
         "start": "npm run build && babel-node server/server.js",
         "client": "webpack --watch",
