@@ -1,5 +1,5 @@
 'use strict'
-
+require('babel-polyfill')
 // env
 require('dotenv').config()
 const {IS_DEV} = process.env

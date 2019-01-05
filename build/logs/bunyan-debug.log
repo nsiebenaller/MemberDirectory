@@ -1,0 +1,6 @@
+{"name":"general-log","hostname":"ip-172-26-6-247","pid":30761,"level":30,"msg":"IS RUNNING IN DEV:: undefined","time":"2019-01-05T05:45:04.643Z","v":0}
+{"name":"general-log","hostname":"ip-172-26-6-247","pid":30761,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2019-01-05T05:45:04.644Z","v":0}
+{"name":"general-log","hostname":"ip-172-26-6-247","pid":30761,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2019-01-05T05:45:04.644Z","v":0}
+{"name":"general-log","hostname":"ip-172-26-6-247","pid":30828,"level":30,"msg":"IS RUNNING IN DEV:: undefined","time":"2019-01-05T05:48:52.880Z","v":0}
+{"name":"general-log","hostname":"ip-172-26-6-247","pid":30828,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2019-01-05T05:48:52.881Z","v":0}
+{"name":"general-log","hostname":"ip-172-26-6-247","pid":30828,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2019-01-05T05:48:52.881Z","v":0}
