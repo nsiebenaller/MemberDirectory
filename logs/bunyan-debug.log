@@ -171,3 +171,12 @@
 {"name":"general-log","hostname":"Nicholass-MBP","pid":5420,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2018-12-30T16:49:02.060Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MBP","pid":5420,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-12-30T16:49:02.061Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MBP","pid":5420,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-12-30T16:49:02.061Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":5669,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2018-12-30T17:22:32.955Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":5669,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-12-30T17:22:32.955Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":5669,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-12-30T17:22:32.955Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":12165,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2018-12-31T21:27:02.938Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":12165,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2018-12-31T21:27:02.939Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":12165,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2018-12-31T21:27:02.939Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":13591,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-01-08T01:37:57.554Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":13591,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2019-01-08T01:37:57.555Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":13591,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2019-01-08T01:37:57.555Z","v":0}
