@@ -9,24 +9,26 @@ import {
 } from '@material-ui/icons'
 import {Button} from '@material-ui/core'
 import {storeParam} from '../../actions/index'
+import {createMember, getMembers} from '../../actions/index'
 import Paginator from './paginator.js'
+import NewMemberForm from './NewMember.js'
 
 @connect(
   state => ({
     members: state.general.members
   }),
-  {storeParam}
+  {storeParam, createMember, getMembers}
 )
 export default class Directory extends Component {
   constructor(props) {
     super(props)
-    console.log("PROPS", props)
     const perPage = 10
     const max = Math.floor(props.members.length / perPage)
     this.state = {
       currPage: 0,
       perPage: perPage,
       maxPage: max,
+      newMemOpened: false,
     }
   }
 
@@ -34,7 +36,7 @@ export default class Directory extends Component {
 
   render() {
     const {members} = this.props
-    const {currPage, perPage, maxPage} = this.state
+    const {currPage, perPage, maxPage, newMemOpened} = this.state
     const start = currPage * perPage
     const page = members.slice(start,start+perPage)
     return(
@@ -42,7 +44,7 @@ export default class Directory extends Component {
         <div className="dash-top">
           <div className="dashboard-header">Directory</div>
           <div className="right-actions">
-            <NewMember />
+            <NewMember setState={this.setVal}/>
             <Paginator
               setState={this.setVal}
               currPage={currPage}
@@ -50,12 +52,15 @@ export default class Directory extends Component {
             />
           </div>
         </div>
-        <div className="dir-contents">
-          {
-            page.map((member, idx) => (
-              <DirCard member={member} key={`dir-mem-${idx}`} />
-            ))
-          }
+        <div className={`dash-contents ${newMemOpened ? "short" : ""}`}>
+          <div className={`dir-contents ${newMemOpened ? "short" : ""}`}>
+            {
+              page.map((member, idx) => (
+                <DirCard member={member} key={`dir-mem-${idx}`} />
+              ))
+            }
+          </div>
+          <NewMemberForm />
         </div>
       </div>
     )
@@ -81,11 +86,13 @@ const DirCard = ({member}) => (
 )
 
 const NewMember = (props) => {
+  console.log("props", props)
   return(
     <div className="new-member-btn">
       <Button
         variant="outlined"
         color="secondary"
+        onClick={() => props.setState({newMemOpened: true})}
       ><Add className="new-member-icon"/>create</Button>
     </div>
   )

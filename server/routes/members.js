@@ -9,4 +9,10 @@ router.route('/')
     res.status(200).send(allMembers)
   })
 
+router.route('/new')
+  .post((req, res, next) => {
+    console.log(req.body)
+    res.status(200).send("check!")
+  })
+
 module.exports = router
