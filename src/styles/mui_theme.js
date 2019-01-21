@@ -5,6 +5,11 @@ import pink from '@material-ui/core/colors/pink'
 // style overrides placed here
 const customTheme = {
   overrides: {
+    MuiMenu: {
+      paper: {
+        maxHeight: "300px"
+      }
+    },
     MuiTab: {
       root: {
         color: '#ffffffb3',

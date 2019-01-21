@@ -29,6 +29,7 @@ export default class Directory extends Component {
       perPage: perPage,
       maxPage: max,
       newMemOpened: false,
+      birthMonth: 0
     }
   }
 
@@ -44,7 +45,7 @@ export default class Directory extends Component {
         <div className="dash-top">
           <div className="dashboard-header">Directory</div>
           <div className="right-actions">
-            <NewMember setState={this.setVal}/>
+            <NewMember setState={this.setVal} opened={newMemOpened}/>
             <Paginator
               setState={this.setVal}
               currPage={currPage}
@@ -60,7 +61,7 @@ export default class Directory extends Component {
               ))
             }
           </div>
-          <NewMemberForm />
+          <NewMemberForm opened={newMemOpened} {...this.state} />
         </div>
       </div>
     )
@@ -86,14 +87,14 @@ const DirCard = ({member}) => (
 )
 
 const NewMember = (props) => {
-  console.log("props", props)
+  //console.log("props", props)
   return(
     <div className="new-member-btn">
       <Button
         variant="outlined"
         color="secondary"
-        onClick={() => props.setState({newMemOpened: true})}
-      ><Add className="new-member-icon"/>create</Button>
+        onClick={() => props.setState({newMemOpened: !props.opened})}
+      ><Add className="new-member-icon"/>{(props.opened) ? ("close") : ("create")}</Button>
     </div>
   )
 }
