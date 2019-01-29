@@ -17,7 +17,7 @@ $ npm install
 \copy "Members"(id, first_name, last_name, address, city, state, zip, home_phone, cell_phone, email, membership_date, status, birth_date, birth_year) from './frccfull.csv' csv header;
 ```
 
-## Runningems
+## Running in Dev
 Build files and start local server in watch mode:
 ```js
 $ npm run dev
