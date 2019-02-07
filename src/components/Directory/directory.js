@@ -9,7 +9,7 @@ import {
 } from '@material-ui/icons'
 import {Button} from '@material-ui/core'
 import {storeParam} from '../../actions/index'
-import {createMember, getMembers} from '../../actions/index'
+import {getMembers} from '../../actions/index'
 import Paginator from './paginator.js'
 import NewMemberForm from './NewMember.js'
 
@@ -17,7 +17,7 @@ import NewMemberForm from './NewMember.js'
   state => ({
     members: state.general.members
   }),
-  {storeParam, createMember, getMembers}
+  {storeParam, getMembers}
 )
 export default class Directory extends Component {
   constructor(props) {
@@ -35,6 +35,27 @@ export default class Directory extends Component {
 
   setVal = (obj) => this.setState(obj)
 
+  toggleForm = (show) => {
+    this.setState({newMemOpened: show})
+    if(!show) {
+      this.form.wrappedInstance.setState({
+        firstname: "",
+        lastname: "",
+        address: "",
+        city: "",
+        state: "",
+        zip: "",
+        homephone: "",
+        cellphone: "",
+        email: "",
+        membershipyear: "",
+        birthmonth: 0,
+        birthday: 1,
+        birthyear: ""
+      })
+    }
+  }
+
   render() {
     const {members} = this.props
     const {currPage, perPage, maxPage, newMemOpened} = this.state
@@ -45,7 +66,7 @@ export default class Directory extends Component {
         <div className="dash-top">
           <div className="dashboard-header">Directory</div>
           <div className="right-actions">
-            <NewMember setState={this.setVal} opened={newMemOpened}/>
+            <NewMember opened={newMemOpened} toggleForm={this.toggleForm}/>
             <Paginator
               setState={this.setVal}
               currPage={currPage}
@@ -61,7 +82,7 @@ export default class Directory extends Component {
               ))
             }
           </div>
-          <NewMemberForm opened={newMemOpened} {...this.state} />
+          <NewMemberForm ref={form => this.form = form} opened={newMemOpened} {...this.state} />
         </div>
       </div>
     )
@@ -93,7 +114,7 @@ const NewMember = (props) => {
       <Button
         variant="outlined"
         color="secondary"
-        onClick={() => props.setState({newMemOpened: !props.opened})}
+        onClick={() => props.toggleForm(!props.opened)}
       ><Add className="new-member-icon"/>{(props.opened) ? ("close") : ("create")}</Button>
     </div>
   )

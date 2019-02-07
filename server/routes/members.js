@@ -12,7 +12,11 @@ router.route('/')
 router.route('/new')
   .post((req, res, next) => {
     console.log(req.body)
-    res.status(200).send("check!")
+    db.Member.create(req.body)
+      .then((x) => {
+        res.status(200).send({success: true})
+      })
+
   })
 
 module.exports = router

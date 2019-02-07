@@ -24,8 +24,10 @@ export function getMembers() {
 
 export function createMember(member) {
   return async (dispatch, getState) => {
-    const reply = await call('POST', '/api/members/new', {name: "test", last: "last"})
-
-    console.log("REPLY", reply)
+    const reply = await call('POST', '/api/members/new', member)
+    if(reply.data.success) {
+      dispatch(getMembers())
+      return reply.data
+    }
   }
 }
