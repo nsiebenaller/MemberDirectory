@@ -13,7 +13,8 @@ import Search from './search'
 
 @connect(
   state => ({
-    selTab: state.general.selectedTab
+    selTab: state.general.selectedTab,
+    searchTerm: state.general.searchTerm,
   }),
   {storeParam}
 )
@@ -23,6 +24,7 @@ export default class Frame extends Component {
     this.state = {}
   }
 
+  setSearchTerm = (term) => this.props.storeParam({searchTerm: term})
 
   render() {
     const {
@@ -52,7 +54,7 @@ export default class Frame extends Component {
           />
         </div>
         <div className="frame-row-container">
-          <Search />
+          <Search setSearchTerm={this.setSearchTerm} searchTerm={this.props.searchTerm} />
           <User history={history}/>
         </div>
       </div>

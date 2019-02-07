@@ -15,7 +15,8 @@ import NewMemberForm from './NewMember.js'
 
 @connect(
   state => ({
-    members: state.general.members
+    members: state.general.members,
+    searchTerm: state.general.searchTerm
   }),
   {storeParam, getMembers}
 )
@@ -57,10 +58,22 @@ export default class Directory extends Component {
   }
 
   render() {
-    const {members} = this.props
+    const {members, searchTerm} = this.props
     const {currPage, perPage, maxPage, newMemOpened} = this.state
     const start = currPage * perPage
-    const page = members.slice(start,start+perPage)
+    const lastnameSort = (a, b) => {
+      var aL = a.last_name.toUpperCase()
+      var bL = b.last_name.toUpperCase()
+      return (aL < bL) ? -1 : (aL > bL) ? 1 : 0
+    }
+    const memberFilter = (m) => {
+      if(m.first_name.includes(searchTerm)) return true
+      if(m.last_name.includes(searchTerm)) return true
+    }
+    const filMembers = (searchTerm !== "") ?
+      (members.filter(memberFilter)) : (members)
+    const page = filMembers.sort(lastnameSort).slice(start,start+perPage)
+
     return(
       <div className="main-container">
         <div className="dash-top">
