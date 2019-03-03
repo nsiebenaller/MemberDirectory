@@ -1,0 +1,29 @@
+.edit-btn {
+  background-color: #f48fb1;
+  color: #ad1457;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 8px 10px;
+  cursor: pointer;
+  right: 10px;
+  position: absolute;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  &:hover {
+    background-color: #ff80ab;
+    color: #880e4f;
+  }
+}
+
+.card-contents {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  > div:nth-child(odd) {
+    text-align: right;
+  }
+  > div:nth-child(even) {
+    padding-left: 20px;
+    text-align: left;
+  }
+}
