@@ -222,3 +222,6 @@
 {"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":38439,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-03-03T02:51:36.580Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":38439,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2019-03-03T02:51:36.581Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":38439,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2019-03-03T02:51:36.581Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.attlocal.net","pid":41752,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-03-03T22:20:23.323Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.attlocal.net","pid":41752,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2019-03-03T22:20:23.324Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.attlocal.net","pid":41752,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2019-03-03T22:20:23.324Z","v":0}

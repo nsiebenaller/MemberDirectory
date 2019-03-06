@@ -114,7 +114,7 @@ export default class NewMemberForm extends Component {
     const {props, state} = this
     const birthDayOpts = formDaysForMonth(state.birthmonth)
     return(
-      <div className={`new-mem-form ${(props.opened) ? "open" : ""}`}>
+      <div className={`table-card-slot ${(props.opened) ? "open" : ""}`}>
         <Snackbar
             anchorOrigin={{
               vertical: 'bottom',
@@ -138,15 +138,18 @@ export default class NewMemberForm extends Component {
               </IconButton>,
             ]}
           />
-        <div className="new-mem-card">
-          <h2>Create a New Member</h2>
-          <div className="new-mem-contents">
-            <div className="new-mem-label">Member Info</div>
+        <div className="table-card">
+          <div className="card-header bg-secondary">
+            <div className="header-text">Create Member</div>
+          </div>
+          <div className="card-body card-form">
+            <div className="card-subheader">Member Info</div>
             <TextField
               label="First Name"
               variant="outlined"
               value={state.firstname}
               onChange={(e) => this.setState({firstname: e.target.value})}
+              color="primary"
             />
             <TextField
               label="Last Name"
@@ -179,7 +182,7 @@ export default class NewMemberForm extends Component {
               value={state.zip}
               onChange={(e) => this.setState({zip: e.target.value})}
             />
-            <div className="new-mem-label">Contact Info</div>
+          <div className="card-subheader">Contact Info</div>
             <TextField
               label="Home Phone"
               variant="outlined"
@@ -206,7 +209,7 @@ export default class NewMemberForm extends Component {
               onChange={(e) => this.setState({membershipyear: e.target.value})}
               type="number"
             />
-            <div className="new-mem-label">Birth Date</div>
+          <div className="card-subheader">Birth Date</div>
             <div className="date-row">
               <Select
                 fullWidth

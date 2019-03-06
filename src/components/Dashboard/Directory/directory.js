@@ -101,6 +101,7 @@ export default class Directory extends Component {
                 member={member}
                 isSelected={this.state.selectedMember === member.id}
                 setState={this.handleSetState}
+                minified={newMemOpened || selMemOpened}
               />))
             }
           </div>
@@ -114,40 +115,18 @@ export default class Directory extends Component {
 
 
 //onClick={() => setState({selectedMember: isSelected ? -1 : member.id})}
-const DirCard = ({member, isSelected, setState}) => {
-  if(false) {
+const DirCard = ({member, isSelected, setState, minified}) => {
+  if(minified) {
     return(
       <div
-        className={`dir-card-large`}
-        onClick={() => setState({selectedMember: isSelected ? -1 : member.id})}
+        className={`dir-card-min ${isSelected ? 'dir-card-selected' : ''}`}
+        onClick={() => setState({selectedMember: isSelected ? -1 : member.id, newMemOpened: false})}
       >
-        <div className="header">
-          <div>{member.last_name}</div>
-          <div>{member.first_name}</div>
-        </div>
-        <div className="title">Location Info</div>
-        <div className="contents">
-          <div>Address: </div><div>{member.address}</div>
-          <div>City: </div><div>{member.city}</div>
-          <div>State: </div><div>{member.state}</div>
-          <div>Zip: </div><div>{member.zip}</div>
-        </div>
-        <div className="title">Contact Info</div>
-        <div className="contents">
-          <div>Home Phone: </div><div>{member.home_phone}</div>
-          <div>Cell Phone: </div><div>{member.cell_phone}</div>
-          <div>Email: </div><div>{member.email}</div>
-        </div>
-        <div className="title">Status Info</div>
-        <div className="contents">
-          <div>Membership Date: </div><div>{member.membership_date}</div>
-          <div>Birth Date: </div><div>{member.birth_month}{member.birth_day ? `/${member.birth_day}` : ''}{member.birth_year ? `/${member.birth_year}` : ''}</div>
-          <div>Status: </div><div>{member.status}</div>
-        </div>
+        <div>{member.last_name}, {member.first_name}</div>
+        <div className="left-align">{member.email || 'no email'}</div>
       </div>
     )
   }
-
   return(
     <div
       className={`dir-card ${isSelected ? 'dir-card-selected' : ''}`}
