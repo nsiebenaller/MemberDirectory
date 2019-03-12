@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import {Edit, Clear} from '@material-ui/icons'
 import {
   TextField,
@@ -9,6 +10,7 @@ import {
   Button,
 } from '@material-ui/core'
 import {months} from '../../../json/months.json'
+import {updateMember, getMembers} from '../../../actions'
 
 const formDaysForMonth = (monthIdx) => {
   const tmp = months[monthIdx].days
@@ -16,23 +18,38 @@ const formDaysForMonth = (monthIdx) => {
   return daysOpts
 }
 
+@connect(
+  state => ({}),
+  {updateMember, getMembers}
+)
 export default class SelectedMember extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
       editing: false,
-      editMember: (props.member) ? (props.member) : ({})
+      editMember: null
     }
   }
 
   componentDidUpdate(prevProps) {
-    if(this.props.member && this.props.member !== this.state.editMember) {
+    if(!this.state.editMember) {
+      this.setState({editMember: this.props.member})
+    }
+    else if(this.props.member && this.props.member.id !== this.state.editMember.id) {
       this.setState({editMember: this.props.member})
     }
   }
 
-  handleSetState = (e) => this.setState(e)
+  handleSetState = (e) => {
+    this.setState(e)
+  }
+
+  handleSave = () => {
+    //console.log(this.state.editMember)
+    this.props.updateMember(this.state.editMember)
+    this.setState({editing: false})
+  }
 
   render() {
     const {props, state} = this
@@ -45,6 +62,8 @@ export default class SelectedMember extends Component {
         </div>
       )
     }
+
+    //console.log(state)
     return(
       <div className={`table-card-slot ${(props.opened) ? "open" : ""}`}>
         <div className="table-card">
@@ -66,7 +85,7 @@ export default class SelectedMember extends Component {
                 color="primary"
                 variant="contained"
                 fullWidth
-                onClick={() => {}}
+                onClick={this.handleSave}
               >Save</Button>}
           </div>
         </div>
@@ -113,55 +132,54 @@ const ContactInfo = (props) => (
     <div>Cell Phone:</div><div>{props.member.cell_phone}</div>
     <div>Email:</div><div>{props.member.email}</div>
     <div>Joined:</div><div>{props.member.membership_date}</div>
-    <div>Birth Date:</div><div>{props.member.birth_date}</div>
+    <div>Birth Date:</div><div>{props.member.birth_date}{props.member.birth_year ? `/${props.member.birth_year}` : ''}</div>
   </div>
 )
 
 const MemberEditInfo = (props) => (
-  <div class="card-form">
+  <div className="card-form">
     <TextField
       label="First Name"
       variant={"outlined"}
       value={props.member.first_name}
-      onChange={(e) => console.log(e)}
+      onChange={(e) => props.setState({editMember: {...props.member, first_name: e.target.value}})}
     />
     <TextField
       label="Last Name"
       variant={"outlined"}
       value={props.member.last_name}
-      onChange={(e) => console.log(e)}
+      onChange={(e) => props.setState({editMember: {...props.member, last_name: e.target.value}})}
     />
     <TextField
       label="Address"
       variant={"outlined"}
       value={props.member.address}
-      onChange={(e) => console.log(e)}
+      onChange={(e) => props.setState({editMember: {...props.member, address: e.target.value}})}
     />
     <TextField
       label="City"
       variant={"outlined"}
       value={props.member.city}
-      onChange={(e) => console.log(e)}
+      onChange={(e) => props.setState({editMember: {...props.member, city: e.target.value}})}
     />
     <TextField
       label="State"
       variant={"outlined"}
       value={props.member.state}
-      onChange={(e) => console.log(e)}
+      onChange={(e) => props.setState({editMember: {...props.member, state: e.target.value}})}
     />
     <TextField
       label="Zip"
       variant={"outlined"}
-      type="number"
       value={props.member.zip}
-      onChange={(e) => console.log(e)}
+      onChange={(e) => props.setState({editMember: {...props.member, zip: e.target.value}})}
     />
   </div>
 )
 
 const ContactEditInfo = (props) => {
-  const birthDayOpts = formDaysForMonth(props.member.birth_month)
-  console.log(props.member)
+  const birthDayOpts = formDaysForMonth(props.member.birth_month ? props.member.birth_month : 0)
+  //console.log(props.member)
 return(
   <div className="card-form">
   <TextField
@@ -169,7 +187,6 @@ return(
     variant="outlined"
     value={props.member.home_phone}
     onChange={(e) => {
-      console.log({editMember: {...props.member, home_phone: e.target.value} })
       props.setState({editMember: {...props.member, home_phone: e.target.value} })
     }}
   />
@@ -177,28 +194,30 @@ return(
     label="Cell Phone"
     variant="outlined"
     value={props.member.cell_phone}
-    onChange={(e) => props.setState({cellphone: e.target.value})}
+    onChange={(e) => props.setState({editMember: {...props.member, cell_phone: e.target.value}})}
   />
   <TextField
     label="Email"
     variant="outlined"
     value={props.member.email}
-    onChange={(e) => props.setState({email: e.target.value})}
+    onChange={(e) => {
+      props.setState({editMember: {...props.member, email: e.target.value}})
+    }}
   />
   <TextField
     fullWidth
     label="Membership Year"
     variant="outlined"
     value={props.member.membership_date}
-    onChange={(e) => props.setState({membership_date: e.target.value})}
+    onChange={(e) => props.setState({editMember: {...props.member, membership_date: e.target.value}})}
     type="number"
   />
   <div className="new-mem-label">Birth Date</div>
   <div className="date-row">
     <Select
       fullWidth
-      value={props.member.birth_month -1}
-      onChange={(e) => props.setState({birth_month: e.target.value, birthday: 1})}
+      value={props.member.birth_month ? props.member.birth_month -1 : ''}
+      onChange={(e) => props.setState({editMember: {...props.member, birth_month: e.target.value, birthday: 1}})}
       input={<OutlinedInput labelWidth={0} />}
     >
       {
@@ -209,8 +228,8 @@ return(
     </Select>
     <Select
       fullWidth
-      value={props.member.birth_day}
-      onChange={(e) => props.setState({birth_day: e.target.value})}
+      value={props.member.birth_day ? props.member.birth_day : ''}
+      onChange={(e) => props.setState({editMember: {...props.member, birth_day: e.target.value}})}
       input={<OutlinedInput labelWidth={0} />}
     >
       {
@@ -224,7 +243,7 @@ return(
       label="Year"
       variant="outlined"
       value={props.member.birth_year}
-      onChange={(e) => props.setState({birth_year: e.target.value})}
+      onChange={(e) => props.setState({editMember: {...props.member, birth_year: e.target.value}})}
       type="number"
     />
   </div>

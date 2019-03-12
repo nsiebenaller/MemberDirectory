@@ -225,3 +225,15 @@
 {"name":"general-log","hostname":"Nicholass-MBP.attlocal.net","pid":41752,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-03-03T22:20:23.323Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MBP.attlocal.net","pid":41752,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2019-03-03T22:20:23.324Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MBP.attlocal.net","pid":41752,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2019-03-03T22:20:23.324Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":50172,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-03-08T00:00:08.465Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":50172,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2019-03-08T00:00:08.466Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":50172,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2019-03-08T00:00:08.466Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":50757,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-03-12T01:07:52.911Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":50757,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2019-03-12T01:07:52.911Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":50757,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2019-03-12T01:07:52.912Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":51040,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-03-12T01:19:30.492Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":51040,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2019-03-12T01:19:30.493Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":51040,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2019-03-12T01:19:30.493Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":51077,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-03-12T01:23:05.545Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":51077,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2019-03-12T01:23:05.546Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":51077,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2019-03-12T01:23:05.546Z","v":0}
