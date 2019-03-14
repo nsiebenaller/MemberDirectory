@@ -4,12 +4,14 @@ import KeyDown from '@material-ui/icons/KeyboardArrowDown'
 import {
   ViewModule,
   BubbleChart,
-  People
+  People,
+  ChromeReaderMode
 } from '@material-ui/icons'
 
 import {storeParam} from '../../../actions/index'
 import User from './user'
 import Search from './search'
+
 
 @connect(
   state => ({
@@ -39,6 +41,7 @@ export default class Frame extends Component {
             option={"Home"}
             storeParam={this.props.storeParam}
             icon={<BubbleChart />}
+            hideLabel
           />
           <ColItem
             class={`option ${(selTab === 'Statistics') ? ("sel-option") : ("")}`}
@@ -49,6 +52,12 @@ export default class Frame extends Component {
           <ColItem
             class={`option ${(selTab === 'Directory') ? ("sel-option") : ("")}`}
             option={"Directory"}
+            storeParam={this.props.storeParam}
+            icon={<ChromeReaderMode />}
+          />
+          <ColItem
+            class={`option ${(selTab === 'Teams') ? ("sel-option") : ("")}`}
+            option={"Teams"}
             storeParam={this.props.storeParam}
             icon={<People />}
           />
@@ -67,6 +76,9 @@ const ColItem = (props) => {
     <div
       className={props.class}
       onClick={() => props.storeParam({selectedTab: props.option})}
-    >{props.icon}</div>
+    >
+      {props.icon}
+      {!props.hideLabel && <div className="option-text">{props.option}</div>}
+    </div>
   )
 }
