@@ -24,41 +24,41 @@ export default class Main extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      birthMembers: null
+      birthMembers: []
+    }
+  }
+
+  componentDidMount() {
+    if(this.state.birthMembers.length === 0 && this.props.members.length > 0) {
+      this.calculateBirthdays()
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    if(this.state.birthMembers === null && nextProps.members.length > 0) {
-
+    if(this.state.birthMembers.length === 0 && nextProps.members.length > 0) {
+      this.calculateBirthdays()
     }
   }
 
-
-  render() {
-    //console.log("motnhs", months)
-    //const birthdayMembers = this.state.birthMembers ? this.state.birthMembers : []
-    //console.log("birth members", birthdayMembers)
-
+  calculateBirthdays = () => {
     const today = new Date()
     const tDay = today.getDate()
     const tMonth = today.getMonth()
     const tYear = today.getFullYear()
-
-    //console.log("date", tDay, tMonth, tYear)
+    const nMonth = tMonth === 11 ? 0 : tMonth + 1
+    const dateSorter = (a, b) => {
+      if(a.birth_month === b.birth_month) return a.birth_day > b.birth_day ? 1 : -1
+      else return a.birth_month > b.birth_month ? 1 : -1
+    }
     let birthdayMembers = this.props.members
-      .filter(person => person.birth_month === tMonth+1)
-      .filter(person => person.birth_day >= tDay)
-      .sort((a, b) => (a.birth_day - b.birth_day))
+      .filter(person => person.birth_month === tMonth+1 && person.birth_day >= tDay || person.birth_month === nMonth+1)
+      .sort(dateSorter)
+    birthdayMembers = birthdayMembers.length > 10 ? birthdayMembers.slice(0, 10) : birthdayMembers
+    this.setState({birthMembers: birthdayMembers})
+  }
 
-    const nMonth = getNextMonth(tMonth)
-    const nextMembers = this.props.members
-      .filter(person => person.birth_month === nMonth+1)
-      .sort((a, b) => (a.birth_day - b.birth_day))
-    birthdayMembers = birthdayMembers.concat(nextMembers)
 
-    birthdayMembers = birthdayMembers.slice(0, 10)
-
+  render() {
     return(
       <div className="main-container">
         <div className="dashboard-header">Dashboard</div>
@@ -67,7 +67,7 @@ export default class Main extends Component {
           <div className="dashboard-subheader">Actions</div>
           <div className="card-container">
             {
-              birthdayMembers.map((member, idx) => (
+              this.state.birthMembers.map((member, idx) => (
                 <Card
                   key={`birth-member-${idx}`}
                   member={member}
