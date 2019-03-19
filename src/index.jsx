@@ -11,7 +11,7 @@ import theme from './styles/mui_theme.js'
 import reducers from './reducers/index'
 import {App} from './components/App.jsx'
 import initialState from './initialState.js'
-
+const IS_DEV = process.env.IS_DEV === 'true'
 const logger = createLogger()
 const store = configureStore(initialState)
 
@@ -24,7 +24,7 @@ render(
     ,document.getElementById('app')
 )
 
-if(module.hot) {
+if(module.hot && IS_DEV) {
   module.hot.accept("./components/App.jsx", () => {
     const {App: NextApp} = require('./components/App.jsx')
     render(
@@ -42,7 +42,7 @@ if(module.hot) {
 function configureStore(initialData) {
   const store = createStore(reducers, initialData, applyMiddleware(thunk, promise, logger))
 
-  if (module.hot) {
+  if (module.hot && IS_DEV) {
     // Enable Webpack hot module replacement for reducers
     module.hot.accept('./reducers', () => {
       const nextRootReducer = require('./reducers/index.js');
