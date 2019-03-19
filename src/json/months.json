@@ -2,51 +2,63 @@
   "months": [
     {
       "long": "January",
-      "short": "Jan"
+      "short": "Jan",
+      "days": 31
     },
     {
       "long": "February",
-      "short": "Feb"
+      "short": "Feb",
+      "days": 29
     },
     {
       "long": "March",
-      "short": "Mar"
+      "short": "Mar",
+      "days": 31
     },
     {
       "long": "April",
-      "short": "Apr"
+      "short": "Apr",
+      "days": 30
     },
     {
       "long": "May",
-      "short": "May"
+      "short": "May",
+      "days": 31
     },
     {
       "long": "June",
-      "short": "Jun"
+      "short": "Jun",
+      "days": 30
     },
     {
       "long": "July",
-      "short": "Jul"
+      "short": "Jul",
+      "days": 31
     },
     {
       "long": "August",
-      "short": "Aug"
+      "short": "Aug",
+      "days": 31
     },
     {
       "long": "September",
-      "short": "Sep"
+      "short": "Sep",
+      "days": 30
     },
     {
       "long": "October",
-      "short": "Oct"
+      "short": "Oct",
+      "days": 31
     },
     {
       "long": "November",
-      "short": "Nov"
+      "short": "Nov",
+      "days": 30
     },
     {
       "long": "December",
-      "short": "Dec"
+      "short": "Dec",
+      "days": 31
     }
   ]
 }

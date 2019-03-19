@@ -12,7 +12,6 @@ const express = require('express')
 const webpack = require('webpack')
 const jwt = require('express-jwt')
 
-
 const app = express()
 
 if(IS_DEV === 'true') {
@@ -26,6 +25,7 @@ if(IS_DEV === 'true') {
   app.use(require("webpack-hot-middleware")(compiler))
 }
 
+app.use(express.json())
 app.use(require('helmet')()) // use helmet
 app.use(require('cors')()) // enable CORS
 app.engine('html', require('ejs').renderFile)

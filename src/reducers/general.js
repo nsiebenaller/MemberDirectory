@@ -3,6 +3,7 @@ import createReducer from '../helpers/createReducer'
 const init = {
   members: [],
   selectedTab: "Home",
+  searchTerm: ""
 }
 
 const general = createReducer(init, {

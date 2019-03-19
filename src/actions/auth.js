@@ -21,6 +21,9 @@ export function call(request, url, params) {
   if(request === 'GET') {
     return Axios.get(url, authHeader, params)
   }
+  else if(request === 'POST') {
+    return Axios.post(url, params, authHeader)
+  }
 }
 
 /*

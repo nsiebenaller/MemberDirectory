@@ -8,10 +8,10 @@ import MembersTable from './SubComponents/MembersTable.jsx'
 import ActionBar from './SubComponents/ActionBar.jsx'
 import NewMemberForm from './SubComponents/NewMemberForm.jsx'
 
-import Frame from '../Frame/frame'
-import Main from '../Main/main'
-import Directory from '../Directory/directory'
-import Statistics from '../Statistics/statistics'
+import Frame from './Frame/frame'
+import Main from './Main/main'
+import Directory from './Directory/directory'
+import Statistics from './Statistics/statistics'
 
 import {storeParam} from '../../actions/index'
 

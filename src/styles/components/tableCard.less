@@ -1,0 +1,45 @@
+.table-card-slot {
+  width: 0%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  &.open {
+    padding: 5px;
+    width: 50%;
+  }
+}
+
+.table-card {
+  display: grid;
+  grid-template-rows: 70px 1fr;
+  background-color: white;
+  border-radius: 5px;
+  width: calc(100% - 10px);
+  height: 635px;
+  position: absolute;
+  .card-header {
+    position: relative;
+    border-radius: 5px 5px 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    &.bg-primary {background-color: #7B1FA2;}
+    &.bg-secondary {background-color: #ed1651;}
+    .header-text {
+      color: white;
+      font-size: 24px;
+      font-weight: bold;
+      margin-left: 20px;
+    }
+  }
+  .card-body {
+    padding: 20px;
+    overflow-y: auto;
+    .card-subheader {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
+  }
+}

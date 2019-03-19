@@ -21,3 +21,23 @@ export function getMembers() {
     dispatch(storeParam({members: updated}))
   }
 }
+
+export function createMember(member) {
+  return async (dispatch, getState) => {
+    const reply = await call('POST', '/api/members/new', member)
+    if(reply.data.success) {
+      dispatch(getMembers())
+    }
+    return reply.data
+  }
+}
+
+export function updateMember(member) {
+  return async (dispatch, getState) => {
+    const reply = await call('POST', '/api/members/update', member)
+    if(reply.data.success) {
+      dispatch(getMembers())
+    }
+    return reply.data
+  }
+}

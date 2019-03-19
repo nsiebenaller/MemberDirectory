@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router-dom'
 import { BrowserRouter } from 'react-router-dom'
-import NewUserForm from './NewUserForm/index.jsx'
 import Login from './Login/index.jsx'
 import Dashboard from './Dashboard/index.jsx'
 import * as actionCreators from '../actions/index'
@@ -20,7 +19,6 @@ render() {
       <BrowserRouter>
       <Switch>
         <Route exact path='/' component={Login}/>
-        <Route path='/new' component={NewUserForm}/>
         <Route path='/dashboard' component={Dashboard}/>
       </Switch>
       </BrowserRouter>
