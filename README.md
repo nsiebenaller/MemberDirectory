@@ -24,6 +24,19 @@ $ npm run dev
 ```
 Open the web browser to `http://localhost:8000/`
 
+## Release to Prod
+
+Build client locally & commit
+```
+npm run build-client
+```
+Pull newest changes onto instance
+Build Server
+```
+git pull
+npm run build-server
+```
+
 ## Help
 
 It has bare minimum to start development:
