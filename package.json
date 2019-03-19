@@ -8,7 +8,7 @@
         "build-server": "babel ./server -d ./build",
         "clean": "rm -rf ./build",
         "start": "npm run build && babel-node server/server.js",
-        "client": "webpack --watch",
+        "client": "webpack --env.NODE_ENV=local --watch",
         "server": "babel-node server/server.js --presets es2015",
         "dev": "concurrently \"npm run server\" \"npm run client\""
     },

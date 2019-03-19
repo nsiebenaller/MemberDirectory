@@ -18,7 +18,8 @@ module.exports = {
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         // Use NoErrorsPlugin for webpack 1.x
-        new webpack.NoEmitOnErrorsPlugin()
+        new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.DefinePlugin({ 'process.env.IS_DEV': JSON.stringify(process.env.IS_DEV) })
     ],
     module: {
         rules: [
