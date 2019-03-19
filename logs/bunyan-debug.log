@@ -243,3 +243,9 @@
 {"name":"general-log","hostname":"Nicholass-MBP","pid":59105,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-03-14T01:07:24.147Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MBP","pid":59105,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2019-03-14T01:07:24.147Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MBP","pid":59105,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2019-03-14T01:07:24.148Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":78622,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-03-19T01:20:11.142Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":78622,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2019-03-19T01:20:11.143Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":78622,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2019-03-19T01:20:11.143Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":78674,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-03-19T01:24:40.941Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":78674,"level":30,"msg":"Express-Boilerplate v1.0.0","time":"2019-03-19T01:24:40.941Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":78674,"level":30,"msg":"==>  💻  Listening on Port 8000  💻  <==","time":"2019-03-19T01:24:40.941Z","v":0}
