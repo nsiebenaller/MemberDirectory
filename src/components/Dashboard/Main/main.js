@@ -24,19 +24,7 @@ export default class Main extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      birthMembers: []
-    }
-  }
-
-  componentDidMount() {
-    if(this.state.birthMembers.length === 0 && this.props.members.length > 0) {
-      this.calculateBirthdays()
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if(this.state.birthMembers.length === 0 && nextProps.members.length > 0) {
-      this.calculateBirthdays()
+      birthMembers: null
     }
   }
 
@@ -59,6 +47,9 @@ export default class Main extends Component {
 
 
   render() {
+    if(this.state.birthMembers === null && this.props.members.length > 0) {
+      this.calculateBirthdays()
+    }
     return(
       <div className="main-container">
         <div className="dashboard-header">Dashboard</div>
@@ -67,7 +58,7 @@ export default class Main extends Component {
           <div className="dashboard-subheader">Actions</div>
           <div className="card-container">
             {
-              this.state.birthMembers.map((member, idx) => (
+              this.state.birthMembers && this.state.birthMembers.map((member, idx) => (
                 <Card
                   key={`birth-member-${idx}`}
                   member={member}

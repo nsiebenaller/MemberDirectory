@@ -1,17 +1,187 @@
 webpackHotUpdate(0,{
 
-/***/ 169:
+/***/ 6133:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(629)(false);
-// imports
+"use strict";
 
 
-// module
-exports.push([module.i, ".app-background {\n  width: 100%;\n  height: 100%;\n  background-image: url(\"/images/space.jpg\");\n  background-position: center;\n  background-size: cover;\n  background-repeat: no-repeat;\n}\n.login-container {\n  position: absolute;\n  width: 600px;\n  height: 100%;\n  background-color: #EEEEEE;\n  padding: 100px;\n  box-shadow: inset 0 0 1000px 100px white;\n}\n.login-container > .login-preheader {\n  text-align: left;\n  color: #7B1FA2;\n  font-size: 21px;\n  font-weight: bolder;\n  margin-bottom: 10px;\n}\n.login-container > .login-header {\n  text-align: left;\n  font-weight: 600;\n  font-size: 32px;\n  color: #212121;\n  margin-bottom: 10px;\n}\n.login-container > .login-subheader {\n  text-align: left;\n  color: #9E9E9E;\n  margin-bottom: 35px;\n}\n.login-container > .text-label {\n  text-align: left;\n}\n.login-container > .btn-container {\n  margin-top: 25px;\n  display: flex;\n}\n.login-container > .btn-container > button {\n  width: 100px;\n  margin-right: 10px;\n}\n.login-container > .fab-container {\n  position: absolute;\n  right: -28px;\n  top: 66%;\n}\n.login-container > .username-input {\n  margin-top: 5px;\n  margin-bottom: 20px;\n}\n.login-container > .password-input {\n  margin-top: 5px;\n}\n.login-container > .text-label {\n  color: #9E9E9E;\n  font-weight: 600;\n}\n.frame-container {\n  position: fixed;\n  z-index: 1;\n}\n.frame-col-container {\n  position: fixed;\n  width: 75px;\n  height: 100%;\n  display: grid;\n  grid-auto-rows: 75px;\n  background-color: white;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n}\n.frame-col-container > .option {\n  width: 100%;\n  height: 100%;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  color: #9E9E9E;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\n.frame-col-container > .option .option-text {\n  display: none;\n}\n.frame-col-container > .option:hover {\n  color: #212121;\n}\n.frame-col-container > .option:hover > .option-text {\n  display: block;\n}\n.frame-col-container > .option > svg {\n  font-size: 32px !important;\n}\n.frame-col-container > .option.sel-option {\n  background-color: #E1BEE7;\n  color: #7B1FA2;\n  border-right: 3px solid #7B1FA2;\n}\n.frame-col-container > .option.sel-option:hover > .option-text {\n  display: none;\n}\n.frame-col-container > .primary-option {\n  background-color: #7B1FA2;\n  color: white;\n}\n.frame-col-container > .primary-option:hover {\n  color: #E1BEE7;\n}\n.frame-row-container {\n  position: fixed;\n  left: 75px;\n  width: calc(100% - 75px);\n  height: 75px;\n  background-color: white;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n}\n.user-container {\n  position: absolute;\n  height: 75px;\n  top: 0;\n  right: 0;\n  padding: 10px;\n}\n.user-container .user-box {\n  outline: 0;\n  border: 1px solid #E0E0E0;\n  border-radius: 5px;\n  height: 100%;\n  width: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: #9E9E9E;\n  cursor: pointer;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n.user-container .user-box .person-container {\n  margin-right: 10px;\n  margin-left: 10px;\n  width: 35px;\n  height: 35px;\n  border-radius: 50%;\n  border: 2px solid #9E9E9E;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.user-container .user-box .person-container > svg {\n  color: #9E9E9E;\n}\n.user-container .user-box > svg {\n  margin-right: 10px;\n}\n.user-container .user-box:hover {\n  border: 1px solid #212121;\n}\n.user-container .user-selected {\n  border: 1px solid #212121 !important;\n}\n.user-container .dropdown-container {\n  position: absolute;\n  padding: 0px 10px 0px 10px;\n  width: 100%;\n  z-index: 1;\n  top: 60px;\n}\n.user-container .dropdown-container .user-dropdown {\n  border: 1px solid #212121;\n  border-top: none;\n  background-color: white;\n  padding: 8px 0px;\n  border-radius: 0px 0px 5px 5px;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n  width: 100%;\n}\n.user-container .dropdown-container .user-option {\n  color: #212121;\n  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);\n  padding: 10px 0px;\n  cursor: pointer;\n}\n.user-container .dropdown-container .user-option:hover {\n  background-color: #E0E0E0;\n}\n.user-container .dropdown-container .display-none {\n  position: absolute;\n  height: 0px !important;\n  overflow: hidden;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\n.search-container {\n  left: 0;\n  height: 75px;\n  margin-left: 25px;\n  display: flex;\n  justify-content: left;\n  align-items: center;\n}\n.search-container > svg {\n  color: #757575;\n  font-size: 32px;\n}\n.search-container > input {\n  height: 60px;\n  width: 50%;\n  color: black;\n  margin-left: 10px;\n  outline: 0;\n  font-size: 21px;\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  border: none;\n}\n.search-container > input::placeholder {\n  color: #9E9E9E;\n  opacity: 1;\n}\n.search-container > input:-ms-input-placeholder {\n  color: #9E9E9E;\n}\n.search-container > input::-ms-input-placeholder {\n  color: #9E9E9E;\n}\n.main-container {\n  width: 100%;\n  height: 100%;\n  display: grid;\n  grid-template-rows: 28px calc(100% - 48px);\n  grid-row-gap: 20px;\n}\n.main-container .main-contents {\n  width: 100%;\n  height: 100%;\n  display: grid;\n  grid-template-rows: 20px calc(100% - 30px);\n  grid-template-columns: 400px 1fr;\n  grid-row-gap: 10px;\n  grid-column-gap: 20px;\n}\n.main-container .main-contents > .dashboard-subheader {\n  padding-left: 10px;\n}\n.card-container {\n  height: 100%;\n  padding-top: 10px;\n  padding-left: 10px;\n  padding-right: 15px;\n  overflow: auto;\n}\n.card-container > div {\n  margin-bottom: 10px;\n}\n.card {\n  background-color: white;\n  border-radius: 5px;\n  padding: 20px;\n  height: 75px;\n  display: flex;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\n.card .icon-holder {\n  color: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-right: 20px;\n  border-radius: 50%;\n  background-color: #7B1FA2;\n  background-image: linear-gradient(#9C27B0, #7B1FA2);\n  width: 35px;\n  height: 35px;\n}\n.card .icon-holder > svg {\n  font-size: 18px;\n}\n.card .card-contents {\n  text-align: left;\n}\n.card .card-contents .title {\n  font-weight: bold;\n}\n.card .card-contents .subtitle {\n  color: #9E9E9E;\n}\n.card:hover {\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n}\n.action-container {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  align-content: flex-start;\n  padding: 0px 10px;\n}\n.action-btn {\n  width: 100px;\n  height: 100px;\n  background-color: #F04272;\n  margin: 5px;\n  border-radius: 5px;\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n  cursor: pointer;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n  padding: 20px 10px;\n}\n.action-btn .icon-holder {\n  color: #f9b3c6;\n  margin-bottom: 5px;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\n.action-btn .icon-holder > svg {\n  font-size: 32px;\n}\n.action-btn .title {\n  color: #f9b3c6;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\n.action-btn:hover * {\n  color: #fdecf0;\n}\n.action-btn:hover {\n  margin: 0px;\n  padding: 25px 10px;\n  width: 110px;\n  height: 110px;\n  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);\n}\n.dash-top {\n  position: relative;\n}\n.dash-contents {\n  width: 100%;\n  height: 640px;\n  display: flex;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\n.dir-contents {\n  width: 100%;\n  height: 100%;\n  padding: 5px;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n}\n.dir-contents.short {\n  width: 50%;\n}\n.dir-card {\n  background-color: white;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n  border-radius: 5px;\n  padding: 15px 20px;\n  height: 50px;\n  margin-bottom: 15px;\n  display: grid;\n  grid-template-columns: 100px 100px 290px 170px 50px 180px 210px;\n  grid-auto-rows: 50px;\n  overflow: hidden;\n  cursor: pointer;\n}\n.dir-card > div {\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n  text-align: left;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.dir-card:hover {\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n}\n.dir-card-min {\n  background-color: white;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n  border-radius: 5px;\n  padding: 15px 20px;\n  height: 50px;\n  margin-bottom: 15px;\n  display: grid;\n  grid-template-columns: 150px 1fr;\n  grid-auto-rows: 50px;\n  overflow: hidden;\n  cursor: pointer;\n}\n.dir-card-min > div {\n  text-align: left;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.dir-card-selected {\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n  padding-right: 0px;\n  background-color: #e0e0e0;\n}\n.dir-card-selected:hover {\n  box-shadow: none;\n}\n.paginator-container {\n  display: flex;\n  right: 0;\n  top: 0;\n}\n.pag-btn {\n  background-color: white;\n  width: 30px;\n  height: 40px;\n  border-radius: 5px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  margin-left: 5px;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n  user-select: none;\n}\n.pag-btn:hover {\n  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n}\n.pag-disable {\n  background-color: transparent !important;\n  border: 1px solid #9E9E9E;\n  cursor: default !important;\n}\n.pag-disable:hover {\n  box-shadow: none !important;\n}\n.right-actions {\n  position: absolute;\n  right: 5px;\n  top: 0;\n  display: flex;\n}\n.new-member-btn {\n  right: 0;\n}\n.new-member-btn .new-member-icon {\n  margin-right: 2px;\n}\n.new-mem-form {\n  width: 0%;\n  height: 100%;\n  overflow: hidden;\n  position: relative;\n}\n.new-mem-form.open {\n  width: 50%;\n  padding: 5px;\n  padding-left: 0px;\n}\n.new-mem-contents {\n  display: grid;\n  grid-row-gap: 10px;\n}\n.new-mem-label {\n  text-align: center;\n  font-weight: bold;\n}\n.date-row {\n  display: flex;\n}\n.date-row > div {\n  margin-left: 10px;\n}\n.date-row > div:first-child {\n  margin-left: 0;\n}\n.edit-btn {\n  background-color: #ce93d8;\n  color: #6a1b9a;\n  height: 32px;\n  font-size: 16px;\n  display: flex;\n  align-items: center;\n  border-radius: 5px;\n  padding: 8px 10px;\n  cursor: pointer;\n  top: 10px;\n  right: 10px;\n  position: absolute;\n  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);\n  user-select: none;\n}\n.edit-btn:hover {\n  background-color: #ba68c8;\n  color: #4a148c;\n}\n.card-info-table {\n  display: grid;\n  grid-template-columns: 100px 1fr;\n}\n.card-info-table > div:nth-child(odd) {\n  text-align: right;\n}\n.card-info-table > div:nth-child(even) {\n  padding-left: 20px;\n  text-align: left;\n}\n.card-form {\n  display: grid;\n  grid-row-gap: 10px;\n}\n.table-card-slot {\n  width: 0%;\n  height: 100%;\n  position: relative;\n  overflow: hidden;\n}\n.table-card-slot.open {\n  padding: 5px;\n  width: 50%;\n}\n.table-card {\n  display: grid;\n  grid-template-rows: 70px 1fr;\n  background-color: white;\n  border-radius: 5px;\n  width: calc(100% - 10px);\n  height: 635px;\n  position: absolute;\n}\n.table-card .card-header {\n  position: relative;\n  border-radius: 5px 5px 0px 0px;\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n}\n.table-card .card-header.bg-primary {\n  background-color: #7B1FA2;\n}\n.table-card .card-header.bg-secondary {\n  background-color: #ed1651;\n}\n.table-card .card-header .header-text {\n  color: white;\n  font-size: 24px;\n  font-weight: bold;\n  margin-left: 20px;\n}\n.table-card .card-body {\n  padding: 20px;\n  overflow-y: auto;\n}\n.table-card .card-body .card-subheader {\n  text-align: center;\n  font-weight: bold;\n  margin-top: 5px;\n  margin-bottom: 5px;\n}\n* {\n  box-sizing: border-box;\n}\nhtml,\nbody {\n  font-family: Arial, sans-serif;\n  font-family: 'Roboto', sans-serif;\n  color: #242b48;\n  text-align: center;\n  font-size: 16px;\n  margin: 0;\n  width: 100vw;\n  height: 100vh;\n  max-height: 100vh;\n  position: fixed;\n  overflow: hidden;\n}\n#app {\n  width: 100%;\n  height: 100%;\n}\n.flex-direction-left {\n  flex-direction: row !important;\n}\n.flex-direction-right {\n  flex-direction: row-reverse !important;\n}\n.dashboard-header {\n  font-weight: bold;\n  color: #212121;\n  text-align: left;\n  font-size: 24px;\n  height: 28px;\n}\n.dashboard-subheader {\n  font-weight: bold;\n  color: #9E9E9E;\n  text-align: left;\n  font-size: 16px;\n  height: 20px;\n}\n.dashboard-container {\n  position: fixed;\n  height: 100%;\n  width: 100%;\n  overflow: hidden;\n}\n.dashboard-container .dashboard-main {\n  position: fixed;\n  width: calc(100% - 75px);\n  height: calc(100% - 75px);\n  top: 75px;\n  left: 75px;\n  padding: 50px 75px;\n  background-color: #F5F5F5;\n  overflow: auto;\n}\n.action-bar-container {\n  border-bottom: 1px solid #BDBDBD;\n  padding: 5px;\n  display: flex;\n  flex-direction: row-reverse;\n}\n.action-bar-container .icon-button-frame {\n  width: 40px;\n  height: 40px;\n}\n.action-bar-container .icon-button-frame button {\n  width: 40px;\n  height: 40px;\n  padding: 8px;\n}\n.side-bar-container {\n  background-color: #4A148C;\n  border-right: 1px solid #BDBDBD;\n  padding: 0px 10px 0px 10px;\n  display: flex;\n  flex-direction: column;\n}\n.side-bar-container div,\n.side-bar-container span {\n  color: white !important;\n}\n.top-bar-container {\n  border-bottom: 1px solid #BDBDBD;\n  display: grid;\n  grid-template-columns: 100px 1fr;\n  width: 100%;\n}\n.top-bar-container .search-field {\n  width: 95%;\n}\n.top-bar-container input {\n  font-size: 42px;\n}\n.top-bar-container > .icon-holder {\n  color: #4A148C;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.top-bar-container > .icon-holder > svg {\n  margin: 0 auto;\n  font-size: 42px;\n}\n.members-table-container {\n  max-height: 100vh;\n  overflow: auto;\n}\n.members-table-container .members-table-head th {\n  background: white;\n  position: sticky;\n  top: 0;\n}\n.members-table-container .members-table-head th:after {\n  content: '';\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  width: 100%;\n  border-bottom: 1px solid #e0e0e0;\n}\n", ""]);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = undefined;
 
-// exports
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _dec, _class;
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRedux = __webpack_require__(38);
+
+var _icons = __webpack_require__(67);
+
+var _index = __webpack_require__(47);
+
+var _months = __webpack_require__(195);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function getNextMonth(month) {
+  return month === 11 ? 0 : month++;
+}
+
+var Main = (_dec = (0, _reactRedux.connect)(function (state) {
+  return {
+    members: state.general.members
+  };
+}, { storeParam: _index.storeParam }), _dec(_class = function (_Component) {
+  _inherits(Main, _Component);
+
+  function Main(props) {
+    _classCallCheck(this, Main);
+
+    var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
+
+    _this.calculateBirthdays = function () {
+      var today = new Date();
+      var tDay = today.getDate();
+      var tMonth = today.getMonth();
+      var tYear = today.getFullYear();
+      var nMonth = tMonth === 11 ? 0 : tMonth + 1;
+      var dateSorter = function dateSorter(a, b) {
+        if (a.birth_month === b.birth_month) return a.birth_day > b.birth_day ? 1 : -1;else return a.birth_month > b.birth_month ? 1 : -1;
+      };
+      var birthdayMembers = _this.props.members.filter(function (person) {
+        return person.birth_month === tMonth + 1 && person.birth_day >= tDay || person.birth_month === nMonth + 1;
+      }).sort(dateSorter);
+      birthdayMembers = birthdayMembers.length > 10 ? birthdayMembers.slice(0, 10) : birthdayMembers;
+      _this.setState({ birthMembers: birthdayMembers });
+    };
+
+    _this.state = {
+      birthMembers: null
+    };
+    return _this;
+  }
+
+  _createClass(Main, [{
+    key: 'render',
+    value: function render() {
+      if (this.state.birthMembers === null && this.props.members.length > 0) {
+        this.calculateBirthdays();
+      }
+      return _react2.default.createElement(
+        'div',
+        { className: 'main-container' },
+        _react2.default.createElement(
+          'div',
+          { className: 'dashboard-header' },
+          'Dashboard'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'main-contents' },
+          _react2.default.createElement(
+            'div',
+            { className: 'dashboard-subheader' },
+            'Upcoming Birthdays'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'dashboard-subheader' },
+            'Actions'
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'card-container' },
+            this.state.birthMembers && this.state.birthMembers.map(function (member, idx) {
+              return _react2.default.createElement(Card, {
+                key: 'birth-member-' + idx,
+                member: member
+              });
+            })
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'action-container' },
+            _react2.default.createElement(Action, { title: "Home", icon: _react2.default.createElement(_icons.BubbleChart, null) }),
+            _react2.default.createElement(Action, { title: "Statistics", icon: _react2.default.createElement(_icons.ViewModule, null) }),
+            _react2.default.createElement(Action, { title: "Directory", icon: _react2.default.createElement(_icons.People, null) })
+          )
+        )
+      );
+    }
+  }]);
+
+  return Main;
+}(_react.Component)) || _class);
+exports.default = Main;
+
+
+var Card = function Card(_ref) {
+  var member = _ref.member;
+
+  return _react2.default.createElement(
+    'div',
+    { className: 'card' },
+    _react2.default.createElement(
+      'div',
+      { className: 'icon-holder' },
+      _react2.default.createElement(_icons.Person, null)
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'card-contents' },
+      _react2.default.createElement(
+        'div',
+        { className: 'title' },
+        member.first_name,
+        ' ',
+        member.last_name
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'subtitle' },
+        _months.months[member.birth_month - 1].short,
+        ' ',
+        member.birth_day
+      )
+    )
+  );
+};
+
+var Action = function Action(_ref2) {
+  var title = _ref2.title,
+      icon = _ref2.icon;
+
+  return _react2.default.createElement(
+    'div',
+    { className: 'action-btn' },
+    _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(
+        'div',
+        { className: 'icon-holder' },
+        icon
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'title' },
+        title
+      )
+    )
+  );
+};
 
 /***/ })
 
