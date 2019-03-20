@@ -36,6 +36,10 @@ Build Server
 git pull
 npm run build-server
 ```
+Restart forever process
+```
+forever restartall
+```
 
 ## Help
 
