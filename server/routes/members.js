@@ -5,7 +5,15 @@ const router = express.Router()
 
 router.route('/')
   .get(async(req, res, next) => {
-    const allMembers = await db.Member.findAll()
+    const allMembers = await db.Member.findAll({
+      include: [{
+        model: db.Tag,
+        as: 'tags',
+        through: {
+          attributes: [],
+        }
+      }]
+    })
     res.status(200).send(allMembers)
   })
 
