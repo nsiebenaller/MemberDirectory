@@ -42,4 +42,20 @@ router.route('/update')
 
 })
 
+router.route('/add_tag')
+.post((req, res, next) => {
+  db.Member.findOne({where: {id: req.body.member_id}})
+    .then((obj) => {
+      db.Tag.findOne({where: {id: req.body.tag_id}})
+        .then((tag) => {
+          console.log(tag, obj)
+          obj.addTags(tag).then(() => {
+            res.status(200).send({success: true})
+          })
+
+        })
+
+    })
+})
+
 module.exports = router

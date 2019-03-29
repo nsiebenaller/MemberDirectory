@@ -18,6 +18,8 @@ export function getMembers() {
       birth_day: (person.birth_date) ? parseInt(person.birth_date.split("/")[1]) : null,
       birth_year: (person.birth_year) ? parseInt(person.birth_year) : null
     }))
+    const u = updated.filter(x => x.tags.length)
+    console.log(u)
     dispatch(storeParam({members: updated}))
   }
 }
@@ -38,6 +40,22 @@ export function updateMember(member) {
     if(reply.data.success) {
       dispatch(getMembers())
     }
+    return reply.data
+  }
+}
+
+export function createTag(tag) {
+  return async (dispatch, getState) => {
+    const reply = await call('POST', '/api/tags/new', tag)
+    console.log(reply)
+    return reply.data
+  }
+}
+
+export function addTag(params) {
+  return async (dispatch, getState) => {
+    const reply = await call('POST', '/api/members/add_tag', params)
+    console.log(reply)
     return reply.data
   }
 }

@@ -40,7 +40,7 @@ const checkToken = {
     else return null
   }
 }
-app.use(['/api/members/*', '/api/members'], jwt(checkToken))
+app.use(['/api/tags', '/api/tags/*', '/api/members/*', '/api/members'], jwt(checkToken))
 
 const router = require('./routes/index')
 app.use('/', router)

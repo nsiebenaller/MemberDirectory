@@ -8,6 +8,7 @@ import {
   OutlinedInput,
   InputLabel,
   Button,
+  Chip
 } from '@material-ui/core'
 import {months} from '../../../json/months.json'
 import {updateMember, getMembers} from '../../../actions'
@@ -53,7 +54,8 @@ export default class SelectedMember extends Component {
 
   render() {
     const {props, state} = this
-    if(!props.member ) {
+    console.log(props.member)
+    if(!props.member) {
       return(
         <div className={`table-card-slot ${(props.opened) ? "open" : ""}`}>
           <div className="table-card">
@@ -64,6 +66,7 @@ export default class SelectedMember extends Component {
     }
 
     //console.log(state)
+    console.log(props.member)
     return(
       <div className={`table-card-slot ${(props.opened) ? "open" : ""}`}>
         <div className="table-card">
@@ -72,6 +75,18 @@ export default class SelectedMember extends Component {
             <ActionButtons editing={state.editing} setState={this.handleSetState} />
           </div>
           <div className={`card-body ${state.editing ? 'card-form' : ''}`}>
+            <div className="card-section">
+              {
+                props.member.tags.map((tag) =>
+                  <Chip
+                    key={`key-${tag.name}`}
+                    label={tag.name}
+                    className="chip"
+                    onDelete={() => console.log("delete")}
+                  />
+                )
+              }
+            </div>
             <div className="card-subheader">Member Info</div>
             {state.editing ?
               <MemberEditInfo member={state.editMember} setState={this.handleSetState} /> :

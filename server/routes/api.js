@@ -1,6 +1,7 @@
 import express from 'express'
 import jwt from 'jsonwebtoken'
 import membersRouter from './members'
+import tagsRouter from './tags'
 import db from '../models'
 
 
@@ -40,4 +41,5 @@ router.route('/login')
 
 
 router.use('/members', membersRouter)
+router.use('/tags', tagsRouter)
 module.exports = router
