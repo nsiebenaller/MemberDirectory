@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import {Edit, Clear} from '@material-ui/icons'
+import {Edit, Clear, Add} from '@material-ui/icons'
 import {
   TextField,
   Select,
@@ -82,9 +82,19 @@ export default class SelectedMember extends Component {
                     key={`key-${tag.name}`}
                     label={tag.name}
                     className="chip"
-                    onDelete={() => console.log("delete")}
+                    onDelete={state.editing && (() => console.log("delete"))}
                   />
                 )
+              }
+              {
+                state.editing &&
+                  <Chip
+                    key={`key-master`}
+                    label={<div className={`add-tag-label`}><Add /><div>add</div></div>}
+                    className={`add-tag-btn`}
+                    variant={`outlined`}
+                    color={`secondary`}
+                  />
               }
             </div>
             <div className="card-subheader">Member Info</div>

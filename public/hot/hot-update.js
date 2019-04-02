@@ -133,10 +133,26 @@ var SelectedMember = (_dec = (0, _reactRedux.connect)(function (state) {
                   key: 'key-' + tag.name,
                   label: tag.name,
                   className: 'chip',
-                  onDelete: function onDelete() {
+                  onDelete: state.editing && function () {
                     return console.log("delete");
                   }
                 });
+              }),
+              state.editing && _react2.default.createElement(_core.Chip, {
+                key: 'key-master',
+                label: _react2.default.createElement(
+                  'div',
+                  { className: 'add-tag-label' },
+                  _react2.default.createElement(_icons.Add, null),
+                  _react2.default.createElement(
+                    'div',
+                    null,
+                    'add'
+                  )
+                ),
+                className: 'add-tag-btn',
+                variant: 'outlined',
+                color: 'secondary'
               })
             ),
             _react2.default.createElement(
