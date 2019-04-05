@@ -33,8 +33,13 @@ router.route('/login')
     const verifiedUser = {
       id: prospect.id,
       username: prospect.username,
-      token,
     }
+
+    const cookieOptions = {
+      httpOnly: true,
+      expires: 0
+     }
+    res.cookie('frcctoken',token,cookieOptions)
 
     return res.status(200).send(verifiedUser)
   })

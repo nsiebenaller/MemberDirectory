@@ -54,7 +54,7 @@ export default class SelectedMember extends Component {
 
   render() {
     const {props, state} = this
-    console.log(props.member)
+    //console.log(props.member)
     if(!props.member) {
       return(
         <div className={`table-card-slot ${(props.opened) ? "open" : ""}`}>
@@ -66,7 +66,7 @@ export default class SelectedMember extends Component {
     }
 
     //console.log(state)
-    console.log(props.member)
+    //console.log(props.member)
     return(
       <div className={`table-card-slot ${(props.opened) ? "open" : ""}`}>
         <div className="table-card">
@@ -82,7 +82,7 @@ export default class SelectedMember extends Component {
                     key={`key-${tag.name}`}
                     label={tag.name}
                     className="chip"
-                    onDelete={state.editing && (() => console.log("delete"))}
+                    onDelete={state.editing ? (() => console.log("delete")) : (() => {})}
                   />
                 )
               }

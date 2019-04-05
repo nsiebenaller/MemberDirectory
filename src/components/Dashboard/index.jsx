@@ -7,7 +7,6 @@ import Main from './Main/main'
 import Directory from './Directory/directory'
 import Statistics from './Statistics/statistics'
 import Teams from './Teams/teams'
-
 import {storeParam} from '../../actions/index'
 
 @connect(
@@ -48,6 +47,7 @@ export default class Dashboard extends Component {
       searchTerm
     } = this.state
 
+
     let filteredMembers = members
     if(searchTerm !== '') {
       filteredMembers = members.filter(obj =>
@@ -59,10 +59,10 @@ export default class Dashboard extends Component {
       <div className="dashboard-container">
         <Frame history={history}/>
         <div className="dashboard-main">
-        {selectedTab === 'Home' && <Main />}
-        {selectedTab === 'Statistics' && <Statistics />}
-        {selectedTab === 'Directory' && <Directory />}
-        {selectedTab === 'Teams' && <Teams />}
+          {selectedTab === 'Home' && <Main />}
+          {selectedTab === 'Statistics' && <Statistics />}
+          {selectedTab === 'Directory' && <Directory />}
+          {selectedTab === 'Teams' && <Teams />}
         </div>
       </div>
     )

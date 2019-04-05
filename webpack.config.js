@@ -2,9 +2,9 @@ const path = require('path');
 const webpack = require("webpack")
 
 module.exports = {
+    mode: 'development',
     entry: [
       'babel-polyfill',
-      'webpack-hot-middleware/client',
       './src/index.jsx',
     ],
     output: {
@@ -14,12 +14,12 @@ module.exports = {
         hotUpdateMainFilename: 'hot/hot-update.json'
     },
     plugins: [
-        // OccurrenceOrderPlugin is needed for webpack 1.x only
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
+        //OccurrenceOrderPlugin is needed for webpack 1.x only
+        //new webpack.optimize.OccurrenceOrderPlugin(),
+        //new webpack.HotModuleReplacementPlugin(),
         // Use NoErrorsPlugin for webpack 1.x
-        new webpack.NoEmitOnErrorsPlugin(),
-        new webpack.DefinePlugin({ 'process.env.IS_DEV': JSON.stringify(process.env.IS_DEV) })
+        //new webpack.NoEmitOnErrorsPlugin(),
+        //new webpack.DefinePlugin({ 'process.env.IS_DEV': JSON.stringify(process.env.IS_DEV) })
     ],
     module: {
         rules: [
@@ -37,18 +37,18 @@ module.exports = {
               }, {
                   loader: "less-loader" // compiles Less to CSS
               }]
-            },
-            {
-              test: /\.json$/,
-              loader: 'json-loader',
             }
         ]
     },
     devServer: {
       port: 3000,
       open: false,
+      compress: true,
+      publicPath: "/",
+      contentBase: path.join(__dirname, 'public'),
       proxy: {
         '/api': 'http://localhost:8000'
-      }
+      },
+      historyApiFallback: true
     }
 };
