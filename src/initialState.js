@@ -1,6 +1,8 @@
 const initialState = {
   general: {
     members: [],
+    fetched: {},
+    fetching: {},
     selectedTab: "Home",
     searchTerm: ""
   }

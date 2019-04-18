@@ -13,7 +13,6 @@ function getNextMonth(month) {
   return (month === 11) ? (0) : (month++)
 }
 
-
 @connect(
   state => ({
     members: state.general.members
@@ -28,7 +27,19 @@ export default class Main extends Component {
     }
   }
 
-  calculateBirthdays = () => {
+  componentWillMount() {
+    if(this.state.birthMembers === null && this.props.members.length > 0) {
+      this.calculateBirthdays()
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if(this.state.birthMembers === null && nextProps.members.length > 0) {
+      this.calculateBirthdays(nextProps.members)
+    }
+  }
+
+  calculateBirthdays = (members) => {
     const today = new Date()
     const tDay = today.getDate()
     const tMonth = today.getMonth()
@@ -38,7 +49,7 @@ export default class Main extends Component {
       if(a.birth_month === b.birth_month) return a.birth_day > b.birth_day ? 1 : -1
       else return a.birth_month > b.birth_month ? 1 : -1
     }
-    let birthdayMembers = this.props.members
+    let birthdayMembers = members
       .filter(person => person.birth_month === tMonth+1 && person.birth_day >= tDay || person.birth_month === nMonth+1)
       .sort(dateSorter)
     birthdayMembers = birthdayMembers.length > 10 ? birthdayMembers.slice(0, 10) : birthdayMembers
@@ -48,7 +59,7 @@ export default class Main extends Component {
 
   render() {
     if(this.state.birthMembers === null && this.props.members.length > 0) {
-      this.calculateBirthdays()
+      //this.calculateBirthdays()
     }
     return(
       <div className="main-container">
