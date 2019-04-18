@@ -399,3 +399,6 @@
 {"name":"general-log","hostname":"Nicholass-MBP","pid":19066,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-04-18T01:03:05.977Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MBP","pid":19066,"level":30,"msg":"Member Directory v2.0.0","time":"2019-04-18T01:03:05.977Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MBP","pid":19066,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-04-18T01:03:05.978Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":20964,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-04-18T02:04:09.257Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":20964,"level":30,"msg":"Member Directory v2.0.0","time":"2019-04-18T02:04:09.257Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":20964,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-04-18T02:04:09.258Z","v":0}

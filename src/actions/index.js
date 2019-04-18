@@ -86,6 +86,13 @@ export function updateMember(member) {
   }
 }
 
+export function getTags() {
+  return async (dispatch, getState) => {
+    const reply = await call('GET', '/api/tags/')
+    console.log(reply)
+  }
+}
+
 export function createTag(tag) {
   return async (dispatch, getState) => {
     const reply = await call('POST', '/api/tags/new', tag)
