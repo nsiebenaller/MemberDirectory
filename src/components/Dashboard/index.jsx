@@ -7,6 +7,7 @@ import Main from './Main/main'
 import Directory from './Directory/directory'
 import Statistics from './Statistics/statistics'
 import Teams from './Teams/teams'
+import Tags from './Tags/tags'
 import {storeParam, getMembers} from '../../actions/index'
 
 @connect(
@@ -39,7 +40,7 @@ export default class Dashboard extends Component {
   checkAndFetchMembers = () => {
     const {fetching, fetched, getMembers} = this.props
     if(!Object.keys(fetching).includes("members") && !Object.keys(fetched).includes("members")) {
-      getMembers()
+      getMembers(this.props.history)
     }
   }
 
@@ -76,6 +77,7 @@ export default class Dashboard extends Component {
           {selectedTab === 'Statistics' && <Statistics />}
           {selectedTab === 'Directory' && <Directory />}
           {selectedTab === 'Teams' && <Teams />}
+          {selectedTab === 'Tags' && <Tags />}
         </div>
       </div>
     )

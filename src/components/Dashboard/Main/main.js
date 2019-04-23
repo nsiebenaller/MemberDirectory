@@ -9,13 +9,9 @@ import {
 import {storeParam} from '../../../actions/index'
 import {months} from '../../../json/months'
 
-function getNextMonth(month) {
-  return (month === 11) ? (0) : (month++)
-}
-
 @connect(
   state => ({
-    members: state.general.members
+    birthdayMembers: state.general.birthdayMembers
   }),
   {storeParam}
 )
@@ -23,44 +19,10 @@ export default class Main extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      birthMembers: null
     }
   }
-
-  componentWillMount() {
-    if(this.state.birthMembers === null && this.props.members.length > 0) {
-      this.calculateBirthdays()
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if(this.state.birthMembers === null && nextProps.members.length > 0) {
-      this.calculateBirthdays(nextProps.members)
-    }
-  }
-
-  calculateBirthdays = (members) => {
-    const today = new Date()
-    const tDay = today.getDate()
-    const tMonth = today.getMonth()
-    const tYear = today.getFullYear()
-    const nMonth = tMonth === 11 ? 0 : tMonth + 1
-    const dateSorter = (a, b) => {
-      if(a.birth_month === b.birth_month) return a.birth_day > b.birth_day ? 1 : -1
-      else return a.birth_month > b.birth_month ? 1 : -1
-    }
-    let birthdayMembers = members
-      .filter(person => person.birth_month === tMonth+1 && person.birth_day >= tDay || person.birth_month === nMonth+1)
-      .sort(dateSorter)
-    birthdayMembers = birthdayMembers.length > 10 ? birthdayMembers.slice(0, 10) : birthdayMembers
-    this.setState({birthMembers: birthdayMembers})
-  }
-
 
   render() {
-    if(this.state.birthMembers === null && this.props.members.length > 0) {
-      //this.calculateBirthdays()
-    }
     return(
       <div className="main-container">
         <div className="dashboard-header">Dashboard</div>
@@ -69,7 +31,7 @@ export default class Main extends Component {
           <div className="dashboard-subheader">Actions</div>
           <div className="card-container">
             {
-              this.state.birthMembers && this.state.birthMembers.map((member, idx) => (
+              this.props.birthdayMembers.map((member, idx) => (
                 <Card
                   key={`birth-member-${idx}`}
                   member={member}

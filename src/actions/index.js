@@ -47,21 +47,28 @@ function hasFetched(getState, key) {
   return Object.keys(fetched).includes(key)
 }
 
-export function getMembers() {
+// MEMBERS
+export function getMembers(history = null) {
   return async (dispatch, getState) => {
     if(!isFetching(getState, 'members')) {
       dispatch(fetching("members", true))
-      const reply = await call('GET', '/api/members')
-      //console.log("retrieved", reply.data)
-      const updated = reply.data.map((person) => ({
-        ...person,
-        birth_month: (person.birth_date) ? parseInt(person.birth_date.split("/")[0]) : null,
-        birth_day: (person.birth_date) ? parseInt(person.birth_date.split("/")[1]) : null,
-        birth_year: (person.birth_year) ? parseInt(person.birth_year) : null
-      }))
-      const u = updated.filter(x => x.tags.length)
-      dispatch(storeParam({members: updated}))
-      dispatch(fetched("members", true))
+      try {
+        const reply = await call('GET', '/api/members')
+        const updated = reply.data.map((person) => ({
+          ...person,
+          birth_month: (person.birth_date) ? parseInt(person.birth_date.split("/")[0]) : null,
+          birth_day: (person.birth_date) ? parseInt(person.birth_date.split("/")[1]) : null,
+          birth_year: (person.birth_year) ? parseInt(person.birth_year) : null
+        }))
+        const u = updated.filter(x => x.tags.length)
+        dispatch(storeParam({members: updated}))
+        dispatch(fetched("members", true))
+        dispatch(calculateBirthdays(updated))
+      }
+      catch(e) {
+        console.log("err", e)
+        if(history) history.push('/')
+      }
     }
   }
 }
@@ -86,10 +93,32 @@ export function updateMember(member) {
   }
 }
 
+function calculateBirthdays(members) {
+  return async (dispatch, getState) => {
+    const today = new Date()
+    const tDay = today.getDate()
+    const tMonth = today.getMonth()
+    const tYear = today.getFullYear()
+    const nMonth = tMonth === 11 ? 0 : tMonth + 1
+    const dateSorter = (a, b) => {
+      if(a.birth_month === b.birth_month) return a.birth_day > b.birth_day ? 1 : -1
+      else return a.birth_month > b.birth_month ? 1 : -1
+    }
+    let birthdayMembers = members
+      .filter(person => person.birth_month === tMonth+1 && person.birth_day >= tDay || person.birth_month === nMonth+1)
+      .sort(dateSorter)
+    birthdayMembers = birthdayMembers.length > 10 ? birthdayMembers.slice(0, 10) : birthdayMembers
+    dispatch(storeParam({birthdayMembers: birthdayMembers}))
+  }
+}
+
+// TAGS
 export function getTags() {
   return async (dispatch, getState) => {
+    dispatch(fetching("tags", true))
     const reply = await call('GET', '/api/tags/')
-    console.log(reply)
+    dispatch(storeParam({tags: reply.data}))
+    dispatch(fetched("tags", true))
   }
 }
 

@@ -5,7 +5,8 @@ import {
   ViewModule,
   BubbleChart,
   People,
-  ChromeReaderMode
+  ChromeReaderMode,
+  Bookmark
 } from '@material-ui/icons'
 
 import {storeParam} from '../../../actions/index'
@@ -60,6 +61,12 @@ export default class Frame extends Component {
             option={"Teams"}
             storeParam={this.props.storeParam}
             icon={<People />}
+          />
+          <ColItem
+            class={`option ${(selTab === 'Tags') ? ("sel-option") : ("")}`}
+            option={"Tags"}
+            storeParam={this.props.storeParam}
+            icon={<Bookmark />}
           />
         </div>
         <div className="frame-row-container">

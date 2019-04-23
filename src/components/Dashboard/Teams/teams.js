@@ -15,7 +15,7 @@ import {storeParam, createTag, addTag} from '../../../actions/index'
   }),
   {storeParam, createTag, addTag}
 )
-export default class Directory extends Component {
+export default class Teams extends Component {
   constructor(props) {
     super(props)
     this.state = {
