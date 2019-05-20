@@ -66,4 +66,15 @@ router.route('/update').post(function (req, res, next) {
   });
 });
 
+router.route('/add_tag').post(function (req, res, next) {
+  _models2.default.Member.findOne({ where: { id: req.body.member_id } }).then(function (obj) {
+    _models2.default.Tag.findOne({ where: { id: req.body.tag_id } }).then(function (tag) {
+      console.log(tag, obj);
+      obj.addTags(tag).then(function () {
+        res.status(200).send({ success: true });
+      });
+    });
+  });
+});
+
 module.exports = router;

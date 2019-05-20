@@ -414,3 +414,6 @@
 {"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":25893,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-05-11T23:58:42.521Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":25893,"level":30,"msg":"Member Directory v2.0.0","time":"2019-05-11T23:58:42.522Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":25893,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-05-11T23:58:42.522Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":26388,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-05-20T00:15:35.987Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":26388,"level":30,"msg":"Member Directory v2.0.0","time":"2019-05-20T00:15:35.988Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP","pid":26388,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-05-20T00:15:35.988Z","v":0}

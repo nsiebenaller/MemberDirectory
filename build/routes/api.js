@@ -12,6 +12,10 @@ var _members = require('./members');
 
 var _members2 = _interopRequireDefault(_members);
 
+var _tags = require('./tags');
+
+var _tags2 = _interopRequireDefault(_tags);
+
 var _models = require('../models');
 
 var _models2 = _interopRequireDefault(_models);
@@ -28,7 +32,7 @@ router.route('/').get(function (req, res, next) {
 
 router.route('/login').get(function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(req, res, next) {
-    var _req$headers, username, password, prospect, token, verifiedUser;
+    var _req$headers, username, password, prospect, token, verifiedUser, cookieOptions;
 
     return regeneratorRuntime.wrap(function _callee$(_context) {
       while (1) {
@@ -66,12 +70,18 @@ router.route('/login').get(function () {
             });
             verifiedUser = {
               id: prospect.id,
-              username: prospect.username,
-              token: token
+              username: prospect.username
             };
+            cookieOptions = {
+              httpOnly: true,
+              expires: 0
+            };
+
+            res.cookie('frcctoken', token, cookieOptions);
+
             return _context.abrupt('return', res.status(200).send(verifiedUser));
 
-          case 11:
+          case 13:
           case 'end':
             return _context.stop();
         }
@@ -85,4 +95,5 @@ router.route('/login').get(function () {
 }());
 
 router.use('/members', _members2.default);
+router.use('/tags', _tags2.default);
 module.exports = router;
