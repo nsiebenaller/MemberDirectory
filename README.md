@@ -1,6 +1,7 @@
 # Member Directory
 Simple membership directory to keep records of enrolled members.
 
+test
 
 ## Installation
 Clone from repository:
