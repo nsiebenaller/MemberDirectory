@@ -1,6 +1,7 @@
 import express from 'express'
 import jwt from 'jsonwebtoken'
 import membersRouter from './members'
+import tagsRouter from './tags'
 import db from '../models'
 
 
@@ -32,12 +33,18 @@ router.route('/login')
     const verifiedUser = {
       id: prospect.id,
       username: prospect.username,
-      token,
     }
+
+    const cookieOptions = {
+      httpOnly: true,
+      expires: 0
+     }
+    res.cookie('frcctoken',token,cookieOptions)
 
     return res.status(200).send(verifiedUser)
   })
 
 
 router.use('/members', membersRouter)
+router.use('/tags', tagsRouter)
 module.exports = router

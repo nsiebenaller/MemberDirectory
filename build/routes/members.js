@@ -22,7 +22,15 @@ router.route('/').get(function () {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return _models2.default.Member.findAll();
+            return _models2.default.Member.findAll({
+              include: [{
+                model: _models2.default.Tag,
+                as: 'tags',
+                through: {
+                  attributes: []
+                }
+              }]
+            });
 
           case 2:
             allMembers = _context.sent;
@@ -42,5 +50,20 @@ router.route('/').get(function () {
   };
 }());
 
+router.route('/new').post(function (req, res, next) {
+  _models2.default.Member.create(req.body).then(function (x) {
+    res.status(200).send({ success: true });
+  });
+});
+
+router.route('/update').post(function (req, res, next) {
+  _models2.default.Member.findOne({ where: { id: req.body.id } }).then(function (obj) {
+    obj.update(req.body).then(function (resp) {
+      res.status(200).send({ success: true });
+    }).catch(function (err) {
+      res.status(500).send({ success: false });
+    });
+  });
+});
+
 module.exports = router;
-//# sourceMappingURL=members.js.map

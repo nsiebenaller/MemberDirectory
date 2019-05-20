@@ -31,4 +31,3 @@ module.exports = bunyan.createLogger({
     path: './logs/bunyan-debug.log'
   }]
 });
-//# sourceMappingURL=logger.js.map

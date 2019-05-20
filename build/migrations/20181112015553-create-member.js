@@ -64,4 +64,3 @@ module.exports = {
     return queryInterface.dropTable('Members');
   }
 };
-//# sourceMappingURL=20181112015553-create-member.js.map

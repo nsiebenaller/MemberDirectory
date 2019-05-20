@@ -4,7 +4,6 @@ export async function login(username = null, password = null) {
   if(!username || !password) return false
   try {
     const resp = await Axios.get('/api/login', {headers: {username: username, password: password}})
-    if(resp.data.token)  Window.frcctoken = resp.data.token
     return resp
   }
   catch(err) {
@@ -15,14 +14,14 @@ export async function login(username = null, password = null) {
 export function call(request, url, params) {
   const authHeader = {
     headers: {
-      'x-access-token': Window.frcctoken
+      'x-access-token': null
     }
   }
-  if(request === 'GET') {
-    return Axios.get(url, authHeader, params)
-  }
-  else if(request === 'POST') {
-    return Axios.post(url, params, authHeader)
+  switch(request) {
+    case 'GET':
+      return Axios.get(url, authHeader, params)
+    case 'POST':
+      return Axios.post(url, params, authHeader)
   }
 }
 

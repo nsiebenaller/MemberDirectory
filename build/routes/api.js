@@ -86,4 +86,3 @@ router.route('/login').get(function () {
 
 router.use('/members', _members2.default);
 module.exports = router;
-//# sourceMappingURL=api.js.map

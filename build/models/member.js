@@ -17,8 +17,8 @@ module.exports = function (sequelize, DataTypes) {
     birth_year: DataTypes.STRING
   }, {});
   Member.associate = function (models) {
+    Member.belongsToMany(models.Tag, { as: 'tags', through: 'MemberTags', foreignKey: 'MemberId', otherKey: 'TagId' });
     // associations can be defined here
   };
   return Member;
 };
-//# sourceMappingURL=member.js.map

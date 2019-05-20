@@ -2,17 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Axios from 'axios'
 
-import SideBar from './SubComponents/SideBar.jsx'
-import TopBar from './SubComponents/TopBar.jsx'
-import MembersTable from './SubComponents/MembersTable.jsx'
-import ActionBar from './SubComponents/ActionBar.jsx'
-import NewMemberForm from './SubComponents/NewMemberForm.jsx'
-
 import Frame from './Frame/frame'
 import Main from './Main/main'
 import Directory from './Directory/directory'
 import Statistics from './Statistics/statistics'
-
+import Teams from './Teams/teams'
 import {storeParam} from '../../actions/index'
 
 @connect(
@@ -53,6 +47,7 @@ export default class Dashboard extends Component {
       searchTerm
     } = this.state
 
+
     let filteredMembers = members
     if(searchTerm !== '') {
       filteredMembers = members.filter(obj =>
@@ -63,18 +58,11 @@ export default class Dashboard extends Component {
     return (
       <div className="dashboard-container">
         <Frame history={history}/>
-        {/*<SideBar />*/}
         <div className="dashboard-main">
-        {selectedTab === 'Home' && <Main />}
-        {selectedTab === 'Statistics' && <Statistics />}
-        {selectedTab === 'Directory' && <Directory />}
-
-        {/*
-          <TopBar onChange={this.searchText} />
-          <ActionBar type={this.state.type} changeType={this.changeType} />
-          {this.state.type === 'default' && <MembersTable members={filteredMembers} />}
-          {this.state.type === 'new-form' && <NewMemberForm />}
-        */}
+          {selectedTab === 'Home' && <Main />}
+          {selectedTab === 'Statistics' && <Statistics />}
+          {selectedTab === 'Directory' && <Directory />}
+          {selectedTab === 'Teams' && <Teams />}
         </div>
       </div>
     )

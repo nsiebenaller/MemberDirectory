@@ -1,7 +1,7 @@
 'use strict';
 
-require('babel-polyfill');
 // env
+
 require('dotenv').config();
 var IS_DEV = process.env.IS_DEV;
 
@@ -17,7 +17,6 @@ var jwt = require('express-jwt');
 var app = express();
 
 if (IS_DEV === 'true') {
-  console.log("ENABLING MIDDLEWARE")
   var webpackDevMiddleware = require("webpack-dev-middleware");
   var webpackHotMiddleware = require("webpack-hot-middleware");
   var webpackConfig = require('../webpack.config.js');
@@ -27,6 +26,8 @@ if (IS_DEV === 'true') {
   }));
   app.use(require("webpack-hot-middleware")(compiler));
 }
+
+app.use(express.json());
 app.use(require('helmet')()); // use helmet
 app.use(require('cors')()); // enable CORS
 app.engine('html', require('ejs').renderFile);
@@ -58,4 +59,3 @@ server.listen(port, function () {
   log.info('' + version);
   log.info('==>  \uD83D\uDCBB  Listening on Port ' + port + '  \uD83D\uDCBB  <==');
 });
-//# sourceMappingURL=server.js.map

@@ -20,4 +20,3 @@ router.use('/', _base2.default);
 router.use('/api', _api2.default);
 
 module.exports = router;
-//# sourceMappingURL=index.js.map

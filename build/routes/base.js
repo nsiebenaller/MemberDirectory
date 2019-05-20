@@ -17,4 +17,3 @@ router.route('/').get(function (req, res, next) {
 });
 
 module.exports = router;
-//# sourceMappingURL=base.js.map

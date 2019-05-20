@@ -1,6 +1,7 @@
 # Member Directory
 Simple membership directory to keep records of enrolled members.
 
+test
 
 ## Installation
 Clone from repository:
@@ -35,6 +36,10 @@ Build Server
 ```
 git pull
 npm run build-server
+```
+Restart forever process
+```
+forever restartall
 ```
 
 ## Help
