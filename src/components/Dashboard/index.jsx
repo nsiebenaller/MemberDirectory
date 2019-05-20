@@ -7,21 +7,21 @@ import Main from './Main/main'
 import Directory from './Directory/directory'
 import Statistics from './Statistics/statistics'
 import Teams from './Teams/teams'
-import {storeParam} from '../../actions/index'
+import Tags from './Tags/tags'
+import {storeParam, getMembers} from '../../actions/index'
 
 @connect(
   state => ({
     members: state.general.members,
-    selectedTab: state.general.selectedTab
+    selectedTab: state.general.selectedTab,
+    fetching: state.general.fetching,
+    fetched: state.general.fetched
   }),
-  {storeParam}
+  {storeParam, getMembers}
 )
 export default class Dashboard extends Component {
   constructor(props) {
     super(props)
-
-    this.searchText = this.searchText.bind(this)
-    this.changeType = this.changeType.bind(this)
 
     this.state = {
       searchTerm: "",
@@ -29,11 +29,26 @@ export default class Dashboard extends Component {
     }
   }
 
-  searchText(text) {
+  componentWillMount() {
+    this.checkAndFetchMembers()
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.checkAndFetchMembers()
+  }
+
+  checkAndFetchMembers = () => {
+    const {fetching, fetched, getMembers} = this.props
+    if(!Object.keys(fetching).includes("members") && !Object.keys(fetched).includes("members")) {
+      getMembers(this.props.history)
+    }
+  }
+
+  searchText = (text) => {
     this.setState({searchTerm: text})
   }
 
-  changeType(type) {
+  changeType = (type) => {
     this.setState({type})
   }
 
@@ -46,7 +61,6 @@ export default class Dashboard extends Component {
     const {
       searchTerm
     } = this.state
-
 
     let filteredMembers = members
     if(searchTerm !== '') {
@@ -63,6 +77,7 @@ export default class Dashboard extends Component {
           {selectedTab === 'Statistics' && <Statistics />}
           {selectedTab === 'Directory' && <Directory />}
           {selectedTab === 'Teams' && <Teams />}
+          {selectedTab === 'Tags' && <Tags />}
         </div>
       </div>
     )

@@ -15,7 +15,7 @@ import {storeParam, createTag, addTag} from '../../../actions/index'
   }),
   {storeParam, createTag, addTag}
 )
-export default class Directory extends Component {
+export default class Teams extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -27,9 +27,9 @@ export default class Directory extends Component {
       <div className="main-container">
         <div className="dashboard-header">Teams</div>
         <div className="main-contents">
-          <button
+          {/*<button
             onClick={() => this.props.addTag({member_id: 1, tag_id: 1})}
-          >Click</button>
+          >Click</button>*/}
         </div>
       </div>
     )

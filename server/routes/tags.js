@@ -13,5 +13,11 @@ router.route('/new')
 
   })
 
+router.route('/')
+  .get(async(req, res, next) => {
+    const allTags = await db.Tag.findAll()
+    res.status(200).send(allTags)
+  })
+
 
 module.exports = router
