@@ -8,7 +8,12 @@ import {
   OutlinedInput,
   InputLabel,
   Button,
-  Chip
+  Chip,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  FormControl,
 } from '@material-ui/core'
 import {months} from '../../../json/months.json'
 import {updateMember, getMembers} from '../../../actions'
@@ -29,7 +34,8 @@ export default class SelectedMember extends Component {
     super(props)
     this.state = {
       editing: false,
-      editMember: null
+      editMember: null,
+      tagDialogOpen: false
     }
   }
 
@@ -65,10 +71,12 @@ export default class SelectedMember extends Component {
       )
     }
 
-    //console.log(state)
-    //console.log(props.member)
     return(
       <div className={`table-card-slot ${(props.opened) ? "open" : ""}`}>
+        <NewTagDialog
+          open={this.state.tagDialogOpen}
+          name={this.props.member.first_name+" "+this.props.member.last_name}
+        />
         <div className="table-card">
           <div className="card-header bg-primary">
             <div className="header-text">{props.member.last_name}, {props.member.first_name}</div>
@@ -94,6 +102,7 @@ export default class SelectedMember extends Component {
                     className={`add-tag-btn`}
                     variant={`outlined`}
                     color={`secondary`}
+                    onClick={() => this.setState({tagDialogOpen: true})}
                   />
               }
             </div>
@@ -275,3 +284,31 @@ return(
   </div>
 )
 }
+
+const NewTagDialog = (props) => (
+  <Dialog
+    open={props.open}
+  >
+    <DialogTitle>{`Add Tags to ${props.name}`}</DialogTitle>
+    <DialogContent>
+          <Select
+            value={11}
+            onChange={(e) => console.log(e)}
+            input={
+              <OutlinedInput
+                labelWidth={0}
+                name="tag"
+                id="outlined-age-simple"
+              />
+            }
+          >
+            <MenuItem value="">
+              <em>None</em>
+            </MenuItem>
+            <MenuItem value={10}>Ten</MenuItem>
+            <MenuItem value={20}>Twenty</MenuItem>
+            <MenuItem value={30}>Thirty</MenuItem>
+          </Select>
+    </DialogContent>
+  </Dialog>
+)
