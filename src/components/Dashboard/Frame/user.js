@@ -10,7 +10,8 @@ import {storeParam} from '../../../actions/index'
 
 @connect(
   state => ({
-    members: state.general.members
+    members: state.general.members,
+    username: state.general.username
   }),
   {storeParam}
 )
@@ -41,7 +42,7 @@ export default class User extends Component {
           }}
         >
           <div className="person-container"><Person /></div>
-          <div>Admin</div>
+          <div>{this.props.username}</div>
           {!opened ? <KeyboardArrowDown /> : <KeyboardArrowUp />}
           <div className="dropdown-container">
             <div className={(opened) ? ("user-dropdown") : ("display-none")}>
