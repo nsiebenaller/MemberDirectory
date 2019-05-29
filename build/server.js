@@ -1,7 +1,7 @@
 'use strict';
 
+require('babel-polyfill');
 // env
-
 require('dotenv').config();
 var IS_DEV = process.env.IS_DEV;
 
@@ -35,6 +35,13 @@ app.use(require('cors')()); // enable CORS
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.use(express.static(__dirname + '/../public'));
+var opts = {
+  extensions: ["js"],
+  setHeaders: function setHeaders(res, path, stat) {
+    res.set("Content-type", "text/javascript");
+  }
+};
+app.use(express.static(__dirname + '/../public', opts));
 
 // PROTECTED PATHS
 var checkAuthorization = function checkAuthorization(req, res, next) {

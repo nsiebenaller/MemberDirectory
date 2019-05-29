@@ -1,5 +1,5 @@
 'use strict'
-
+require('babel-polyfill')
 // env
 require('dotenv').config()
 const {IS_DEV} = process.env
@@ -33,6 +33,14 @@ app.use(require('cors')()) // enable CORS
 app.engine('html', require('ejs').renderFile)
 app.set('view engine', 'html')
 app.use(express.static(`${__dirname}/../public`))
+var opts = {
+	extensions: ["js"],
+	setHeaders: function(res, path, stat) {
+		res.set("Content-type", "text/javascript")
+	}
+}
+app.use(express.static(`${__dirname}/../public`, opts))
+
 
 // PROTECTED PATHS
 const checkAuthorization = (req, res, next) => {
