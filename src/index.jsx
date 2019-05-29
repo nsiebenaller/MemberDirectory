@@ -40,7 +40,7 @@ if(module.hot && IS_DEV) {
 
 
 function configureStore(initialData) {
-  const store = createStore(reducers, initialData, applyMiddleware(thunk, promise, logger))
+  const store = createStore(reducers, initialData, applyMiddleware(thunk, promise))
 
   if (module.hot && IS_DEV) {
     // Enable Webpack hot module replacement for reducers
