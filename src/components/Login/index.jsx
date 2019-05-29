@@ -9,14 +9,12 @@ import {
 } from '@material-ui/core'
 import ArrowDown from '@material-ui/icons/KeyboardArrowDown'
 import {login} from '../../actions/auth.js'
-import {getMembers} from '../../actions/index'
+import {getMembers, storeParam} from '../../actions/index'
 
 
 @connect(
   state => ({
-  }), {
-    getMembers
-  }
+  }), Object.assign({}, {storeParam, getMembers})
 )
 export default class Login extends Component {
   constructor(props) {
@@ -37,6 +35,7 @@ export default class Login extends Component {
 
     const resp = await login(username, password)
     if (resp.status === 200) {
+      this.props.storeParam({username: this.state.username})
       this.props.getMembers()
       this.props.history.push('/dashboard')
     } else {

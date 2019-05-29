@@ -40,9 +40,9 @@ export default class Main extends Component {
             }
           </div>
           <div className="action-container">
-            <Action title={"Home"} icon={<BubbleChart />} />
-            <Action title={"Statistics"} icon={<ViewModule />} />
-            <Action title={"Directory"} icon={<People />} />
+            <Action title={"Home"} icon={<BubbleChart />} storeParam={this.props.storeParam} />
+            <Action title={"Statistics"} icon={<ViewModule />} storeParam={this.props.storeParam} />
+            <Action title={"Directory"} icon={<People />} storeParam={this.props.storeParam} />
           </div>
         </div>
       </div>
@@ -52,7 +52,9 @@ export default class Main extends Component {
 
 const Card = ({member}) => {
   return(
-  <div className="card">
+  <div
+    className="card"
+  >
     <div className="icon-holder"><Person /></div>
     <div className="card-contents">
       <div className="title">{member.first_name} {member.last_name}</div>
@@ -61,9 +63,12 @@ const Card = ({member}) => {
   </div>
 )}
 
-const Action = ({title, icon}) => {
+const Action = ({title, icon, storeParam}) => {
   return(
-    <div className="action-btn">
+    <div
+      className="action-btn"
+      onClick={() => storeParam({selectedTab: title})}
+    >
       <div>
         <div className="icon-holder">{icon}</div>
         <div className="title">{title}</div>

@@ -6,7 +6,8 @@ const initialState = {
     fetched: {},
     fetching: {},
     selectedTab: "Home",
-    searchTerm: ""
+    searchTerm: "",
+    username: ""
   }
 }
 
