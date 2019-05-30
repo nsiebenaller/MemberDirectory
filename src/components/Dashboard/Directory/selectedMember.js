@@ -80,7 +80,7 @@ export default class SelectedMember extends Component {
         <div className="table-card">
           <div className="card-header bg-primary">
             <div className="header-text">{props.member.last_name}, {props.member.first_name}</div>
-            <ActionButtons editing={state.editing} setState={this.handleSetState} />
+            <ActionButtons editing={state.editing} setState={this.handleSetState} close={() => this.props.handleSetState({selectedMember: -1})} />
           </div>
           <div className={`card-body ${state.editing ? 'card-form' : ''}`}>
             <div className="card-section">
@@ -138,24 +138,33 @@ export default class SelectedMember extends Component {
 }
 
 const ActionButtons = (props) => {
-  if(props.editing) {
-    return(
-      <div
-        className="edit-btn"
-        onClick={() => props.setState({editing: !props.editing})}
-      ><Clear />Cancel</div>
-    )
-  }
-  else {
-    return(
+  const action = (props.editing) ?
+    (
+        <div
+          className="edit-btn"
+          onClick={() => props.setState({editing: !props.editing})}
+        ><Clear /></div>
+    ) :
+    (
       <div>
         <div
           className="edit-btn"
           onClick={() => props.setState({editing: !props.editing})}
-        ><Edit />Edit</div>
+        ><Edit /></div>
       </div>
     )
-  }
+
+    return (
+      <div className="action-btns">
+        {action}
+        <div
+          className="clear-btn"
+          onClick={props.close}
+        >
+          <Clear />
+        </div>
+      </div>
+    )
 }
 
 const MemberInfo = (props) => (

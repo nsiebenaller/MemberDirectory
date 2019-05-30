@@ -106,7 +106,11 @@ export default class Directory extends Component {
             }
           </div>
           <NewMemberForm ref={form => this.form = form} opened={newMemOpened} {...this.state} />
-          <SelectedMember opened={selMemOpened} member={members.find(x => x.id === selectedMember)} />
+          <SelectedMember
+            opened={selMemOpened}
+            member={members.find(x => x.id === selectedMember)}
+            handleSetState={this.handleSetState}
+          />
         </div>
       </div>
     )
