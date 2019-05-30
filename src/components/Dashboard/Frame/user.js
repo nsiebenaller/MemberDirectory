@@ -28,7 +28,6 @@ export default class User extends Component {
   }
 
   render(){
-    console.log(this.props)
     const {opened} = this.state
     return(
       <div className="user-container">

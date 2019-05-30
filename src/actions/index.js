@@ -125,8 +125,7 @@ export function getTags() {
 export function createTag(tag) {
   return async (dispatch, getState) => {
     const reply = await call('POST', '/api/tags/new', tag)
-    console.log(reply)
-    return reply.data
+    return reply
   }
 }
 

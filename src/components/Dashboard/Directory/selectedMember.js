@@ -85,13 +85,22 @@ export default class SelectedMember extends Component {
           <div className={`card-body ${state.editing ? 'card-form' : ''}`}>
             <div className="card-section">
               {
-                props.member.tags.map((tag) =>
-                  <Chip
-                    key={`key-${tag.name}`}
-                    label={tag.name}
-                    className="chip"
-                    onDelete={state.editing ? (() => console.log("delete")) : (() => {})}
-                  />
+                props.member.tags.map((tag) => (state.editing) ?
+                  (
+                    <Chip
+                      key={`key-${tag.name}`}
+                      label={tag.name}
+                      className="chip"
+                      onDelete={() => console.log("delete!")}
+                    />
+                  ) :
+                  (
+                    <Chip
+                      key={`key-${tag.name}`}
+                      label={tag.name}
+                      className="chip"
+                    />
+                  )
                 )
               }
               {
@@ -213,13 +222,12 @@ const MemberEditInfo = (props) => (
 
 const ContactEditInfo = (props) => {
   const birthDayOpts = formDaysForMonth(props.member.birth_month ? props.member.birth_month : 0)
-  //console.log(props.member)
 return(
   <div className="card-form">
   <TextField
     label="Home Phone"
     variant="outlined"
-    value={props.member.home_phone}
+    value={props.member.home_phone ? props.member.home_phone : ""}
     onChange={(e) => {
       props.setState({editMember: {...props.member, home_phone: e.target.value} })
     }}

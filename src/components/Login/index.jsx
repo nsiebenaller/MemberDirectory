@@ -8,6 +8,7 @@ import {
   CardContent,
 } from '@material-ui/core'
 import ArrowDown from '@material-ui/icons/KeyboardArrowDown'
+import Clear from '@material-ui/icons/Clear'
 import {login} from '../../actions/auth.js'
 import {getMembers, storeParam} from '../../actions/index'
 
@@ -53,8 +54,17 @@ export default class Login extends Component {
           <div className="login-preheader">welcome</div>
           <div className="login-header">Fox River Directory</div>
           <div className="login-subheader">Please login to your account.</div>
+          {
+            this.state.error &&
+            <div className="error-text">Incorrect username or password.
+              <Clear
+                onClick={() => this.setState({error: false})}
+              />
+            </div>
+          }
           <div className="text-label">Username</div>
           <TextField
+            error={this.state.error}
             className="username-input"
             value={this.state.username}
             onChange={e => this.setState({username: e.target.value})}
@@ -64,6 +74,7 @@ export default class Login extends Component {
           />
           <div className="text-label">Password</div>
           <TextField
+            error={this.state.error}
             className="password-input"
             type="password"
             value={this.state.password}
@@ -79,11 +90,11 @@ export default class Login extends Component {
               color="primary"
               onClick={this.handleLogin}
             >login</Button>
-            <Button
+          {/*<Button
               variant="outlined"
               color="primary"
               onClick={() => {console.log("Feature not Enabled.")}}
-            >sign up</Button>
+            >sign up</Button>*/}
           </div>
           <div className="fab-container">
             <Button variant="fab" color="secondary" aria-label="Add">
@@ -95,39 +106,3 @@ export default class Login extends Component {
     )
   }
 }
-//<Fab color="primary" aria-label="Add"></Fab>
-/*
-<Card>
-  <CardContent>
-    <b>Fox River Membership Directory</b>
-  <TextField
-    label="Username"
-    value={this.state.username}
-    onChange={e => this.setState({username: e.target.value})}
-    margin="normal"
-    variant="outlined"
-  />
-  <TextField
-    label="Password"
-    type="password"
-    value={this.state.password}
-    onChange={e => this.setState({password: e.target.value})}
-    margin="normal"
-    variant="outlined"
-  />
-<br />
-<Button
-  variant="contained"
-  color="primary"
-  onClick={this.handleLogin}
->Login</Button>
-{
-  this.state.error && (
-    <div className="error-text">
-      Incorrect Username/Password
-    </div>
-  )
-}
-</CardContent>
-</Card>
-*/
