@@ -6,6 +6,7 @@ import {
   People,
   Person,
   Add,
+  SaveAlt
 } from '@material-ui/icons'
 import {Button} from '@material-ui/core'
 import {storeParam, getMembers} from '../../../actions/index'
@@ -78,6 +79,10 @@ export default class Directory extends Component {
         <div className="dash-top">
           <div className="dashboard-header">Directory</div>
           <div className="right-actions">
+            <Button
+              className="export-btn"
+              variant="outlined"
+            ><SaveAlt/>Export</Button>
             <Filters setFilter={(fn) => this.setState({ filterFn: fn })} />
             <NewMember opened={newMemOpened} toggleForm={this.toggleForm}/>
             <Paginator

@@ -248,7 +248,7 @@ export default class NewMemberForm extends Component {
               color="secondary"
               variant="contained"
               onClick={this.handleSubmit}
-            >Create</Button>
+            >Save</Button>
           </div>
         </div>
       </div>

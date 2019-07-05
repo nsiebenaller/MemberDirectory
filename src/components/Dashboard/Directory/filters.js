@@ -10,6 +10,9 @@ import {
   Checkbox,
   FormControlLabel
 } from '@material-ui/core'
+import {
+  FilterList
+} from '@material-ui/icons'
 
 @connect(
   state => ({}),
@@ -51,7 +54,7 @@ export default class Filters extends Component {
           variant="outlined"
           color="primary"
           onClick={() => this.setState({ open: true })}
-        >Filters</Button>
+        ><FilterList />Filters</Button>
         <Dialog
           open={state.open}
           onClose={this.close}
