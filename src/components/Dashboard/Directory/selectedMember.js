@@ -70,7 +70,6 @@ export default class SelectedMember extends Component {
         </div>
       )
     }
-
     return(
       <div className={`table-card-slot ${(props.opened) ? "open" : ""}`}>
         <NewTagDialog

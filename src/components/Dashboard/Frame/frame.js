@@ -34,6 +34,7 @@ export default class Frame extends Component {
       selTab,
       history
     } = this.props
+    console.log(selTab)
     return(
       <div className="frame-container">
         <div className="frame-col-container">
@@ -70,7 +71,11 @@ export default class Frame extends Component {
           />
         </div>
         <div className="frame-row-container">
-          <Search setSearchTerm={this.setSearchTerm} searchTerm={this.props.searchTerm} />
+          {
+            selTab === "xxx" && (
+              <Search setSearchTerm={this.setSearchTerm} searchTerm={this.props.searchTerm} />
+            )
+          }
           <User history={history}/>
         </div>
       </div>

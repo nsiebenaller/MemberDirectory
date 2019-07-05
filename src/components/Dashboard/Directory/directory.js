@@ -12,6 +12,7 @@ import {storeParam, getMembers} from '../../../actions/index'
 import Paginator from './paginator.js'
 import NewMemberForm from './NewMember.js'
 import SelectedMember from './SelectedMember.js'
+import Filters from './filters.js'
 
 @connect(
   state => ({
@@ -32,6 +33,7 @@ export default class Directory extends Component {
       newMemOpened: false,
       birthMonth: 0,
       selectedMember: -1,
+      filterFn: null
     }
   }
 
@@ -59,31 +61,24 @@ export default class Directory extends Component {
   }
 
   render() {
-    const {members, searchTerm} = this.props
-    const {currPage, perPage, maxPage, newMemOpened, selectedMember} = this.state
+    const { members } = this.props
+    const { currPage, perPage, maxPage, newMemOpened, selectedMember, filterFn } = this.state
     const start = currPage * perPage
     const lastnameSort = (a, b) => {
       var aL = a.last_name.toUpperCase()
       var bL = b.last_name.toUpperCase()
       return (aL < bL) ? -1 : (aL > bL) ? 1 : 0
     }
-    const memberFilter = (m) => {
-      if(m.first_name.includes(searchTerm)) return true
-      if(m.last_name.includes(searchTerm)) return true
-    }
-    const filMembers = (searchTerm !== "") ?
-      (members.filter(memberFilter)) : (members)
-    const page = filMembers.sort(lastnameSort).slice(start,start+perPage)
-
+    const filtered = filterFn !== null ? members.filter(filterFn) : members
+    const page = filtered.sort(lastnameSort).slice(start,start+perPage)
     const selMemOpened = this.state.selectedMember !== -1
-
-    //console.log(members)
 
     return(
       <div className="main-container">
         <div className="dash-top">
           <div className="dashboard-header">Directory</div>
           <div className="right-actions">
+            <Filters setFilter={(fn) => this.setState({ filterFn: fn })} />
             <NewMember opened={newMemOpened} toggleForm={this.toggleForm}/>
             <Paginator
               setState={this.handleSetState}
@@ -118,7 +113,6 @@ export default class Directory extends Component {
 }
 
 
-//onClick={() => setState({selectedMember: isSelected ? -1 : member.id})}
 const DirCard = ({member, isSelected, setState, minified}) => {
   if(minified) {
     return(

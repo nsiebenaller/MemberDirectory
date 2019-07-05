@@ -50,7 +50,7 @@ const customTheme = {
       },
       inputMarginDense: {
       },
-    },
+    }
   },
   palette: {
     primary: {
