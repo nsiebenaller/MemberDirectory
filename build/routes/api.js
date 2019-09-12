@@ -27,7 +27,13 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 var router = _express2.default.Router();
 
 router.route('/').get(function (req, res, next) {
-  return res.send('I am the API');
+  return res.send('OK');
+});
+
+router.route('/ping').get(function (req, res, next) {
+  var token = req.cookies.frcctoken;
+  var verified = _jsonwebtoken2.default.verify(token, 'secret');
+  return res.status(200).send({ username: verified.username, id: verified.id });
 });
 
 router.route('/login').get(function () {
@@ -64,7 +70,8 @@ router.route('/login').get(function () {
           case 8:
             token = _jsonwebtoken2.default.sign({
               username: prospect.username,
-              id: prospect.id
+              id: prospect.id,
+              revoked: false
             }, 'secret', {
               expiresIn: '24h'
             });
@@ -91,6 +98,48 @@ router.route('/login').get(function () {
 
   return function (_x, _x2, _x3) {
     return _ref.apply(this, arguments);
+  };
+}());
+
+router.route('/logout').get(function (req, res, next) {
+  var token = req.cookies.frcctoken;
+  try {
+    var verified = _jsonwebtoken2.default.verify(token, 'secret');
+    var newToken = _jsonwebtoken2.default.sign({
+      username: verified.username,
+      id: verified.id,
+      revoked: true
+    }, 'secret', {
+      expiresIn: '1'
+    });
+    var cookieOptions = {
+      httpOnly: true
+    };
+    res.cookie('frcctoken', newToken, cookieOptions);
+    return res.status(200).send("OK");
+  } catch (e) {
+    return res.status(200).send("OK");
+  }
+});
+
+router.route('/migrate').get(function () {
+  var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(req, res, next) {
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            return _context2.abrupt('return', res.status(200).send("OK"));
+
+          case 1:
+          case 'end':
+            return _context2.stop();
+        }
+      }
+    }, _callee2, undefined);
+  }));
+
+  return function (_x4, _x5, _x6) {
+    return _ref2.apply(this, arguments);
   };
 }());
 

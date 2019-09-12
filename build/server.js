@@ -12,7 +12,8 @@ var log = require('./logger.js');
 var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
-var jwt = require('express-jwt');
+var expressJWT = require('express-jwt');
+var jsonwebtoken = require('jsonwebtoken');
 var cookieParser = require('cookie-parser');
 
 var app = express();
@@ -36,38 +37,39 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.use(express.static(__dirname + '/../public'));
 var opts = {
-  extensions: ["js"],
-  setHeaders: function setHeaders(res, path, stat) {
-    res.set("Content-type", "text/javascript");
-  }
+	extensions: ["js"],
+	setHeaders: function setHeaders(res, path, stat) {
+		res.set("Content-type", "text/javascript");
+	}
 };
 app.use(express.static(__dirname + '/../public', opts));
 
 // PROTECTED PATHS
-var checkAuthorization = function checkAuthorization(req, res, next) {
-  var token = req.cookies.frcctoken;
-  if (!token) {
-    res.clearCookie('frcctoken');
-    res.send(401, 'Invalid or missing authorization token');
-  } else {
-    var verified = jwt.verify(token, 'secret');
-    console.log(verified);
-  }
-};
 var checkToken = {
-  secret: 'secret',
-  getToken: function getToken(req) {
-    return req.cookies.frcctoken;
-  }
+	secret: 'secret',
+	getToken: function getToken(req) {
+		var token = req.cookies.frcctoken;
+		if (!token) {
+			return null;
+		} else {
+			try {
+				var verified = jsonwebtoken.verify(token, 'secret');
+				if (verified.revoked) return null;
+			} catch (e) {
+				return null;
+			}
+		}
+		return token;
+	}
 };
 
-app.use(['/api/tags', '/api/tags/*', '/api/members/*', '/api/members'], jwt(checkToken));
+app.use(['/api/ping', '/api/tags', '/api/tags/*', '/api/members/*', '/api/members'], expressJWT(checkToken));
 
 //Redirect all to root
 var router = require('./routes/index');
 app.use('/', router);
 app.use('/', function (req, res) {
-  return res.redirect('/');
+	return res.redirect('/');
 });
 
 var port = process.env.PORT || 8000;
@@ -76,7 +78,7 @@ var server = require('http').Server(app);
 var version = 'Member Directory v' + require('../package.json').version;
 // start server
 server.listen(port, function () {
-  log.info('IS RUNNING IN DEV:: ' + IS_DEV);
-  log.info('' + version);
-  log.info('==>  \uD83D\uDCBB  API Listening on Port ' + port + '  \uD83D\uDCBB  <==');
+	log.info('IS RUNNING IN DEV:: ' + IS_DEV);
+	log.info('' + version);
+	log.info('==>  \uD83D\uDCBB  API Listening on Port ' + port + '  \uD83D\uDCBB  <==');
 });
