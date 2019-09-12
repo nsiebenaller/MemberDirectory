@@ -9,7 +9,7 @@ import {
   SaveAlt
 } from '@material-ui/icons'
 import {Button} from '@material-ui/core'
-import {storeParam, getMembers} from '../../../actions/index'
+import {storeParam, getMembers, exportMembers} from '../../../actions/index'
 import Paginator from './paginator.js'
 import NewMemberForm from './NewMember.js'
 import SelectedMember from './SelectedMember.js'
@@ -82,6 +82,10 @@ export default class Directory extends Component {
             <Button
               className="export-btn"
               variant="outlined"
+              onClick={async() => {
+                const resp = await exportMembers()
+                console.log(resp)
+              }}
             ><SaveAlt/>Export</Button>
             <Filters setFilter={(fn) => this.setState({ filterFn: fn })} />
             <NewMember opened={newMemOpened} toggleForm={this.toggleForm}/>

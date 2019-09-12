@@ -11,7 +11,8 @@
         "client-old": "webpack --env.NODE_ENV=local --watch",
         "client": "webpack-dev-server",
         "server": "babel-node server/server.js --presets es2015",
-        "dev": "concurrently \"npm run server\" \"npm run client\""
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "dev-server": "npm run server"
     },
     "repository": "https://github.com/nsiebenaller/MemberDirectory",
     "keywords": [

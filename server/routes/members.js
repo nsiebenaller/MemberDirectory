@@ -1,5 +1,6 @@
 import express from 'express'
 import db from '../models'
+import { formMemberCSV } from '../helpers'
 
 const router = express.Router()
 
@@ -27,7 +28,7 @@ router.route('/new')
   })
 
 router.route('/update')
-.post((req, res, next) => {
+  .post((req, res, next) => {
   db.Member.findOne({where: {id: req.body.id}})
     .then((obj) => {
       obj.update(req.body)
@@ -43,7 +44,7 @@ router.route('/update')
 })
 
 router.route('/add_tag')
-.post((req, res, next) => {
+  .post((req, res, next) => {
   db.Member.findOne({where: {id: req.body.member_id}})
     .then((obj) => {
       db.Tag.findOne({where: {id: req.body.tag_id}})
@@ -57,5 +58,13 @@ router.route('/add_tag')
 
     })
 })
+
+router.route('/export')
+  .get(async (req, res, next) => {
+    res.set('Content-Type', 'application/octet-stream')
+    const members = await db.Member.findAll()
+    const csv = formMemberCSV(members)
+    res.send(csv)
+  })
 
 module.exports = router

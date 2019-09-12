@@ -10,7 +10,8 @@ const log = require('./logger.js')
 const path = require('path')
 const express = require('express')
 const webpack = require('webpack')
-const jwt = require('express-jwt')
+const expressJWT = require('express-jwt')
+const jsonwebtoken = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
 
 const app = express()
@@ -43,25 +44,27 @@ app.use(express.static(`${__dirname}/../public`, opts))
 
 
 // PROTECTED PATHS
-const checkAuthorization = (req, res, next) => {
-  const token = req.cookies.frcctoken
-  if(!token) {
-    res.clearCookie('frcctoken')
-    res.send(401, 'Invalid or missing authorization token')
-  }
-  else {
-    const verified = jwt.verify(token, 'secret')
-    console.log(verified)
-  }
-}
 const checkToken = {
   secret: 'secret',
   getToken: (req) => {
-    return req.cookies.frcctoken
+		const token = req.cookies.frcctoken
+		if(!token) {
+			return null
+		}
+		else {
+			try {
+				const verified = jsonwebtoken.verify(token, 'secret')
+				if(verified.revoked) return null
+			}
+			catch(e) {
+				return null
+			}
+		}
+    return token
   }
 }
 
-app.use(['/api/tags', '/api/tags/*', '/api/members/*', '/api/members'], jwt(checkToken))
+app.use(['/api/ping', '/api/tags', '/api/tags/*', '/api/members/*', '/api/members'], expressJWT(checkToken))
 
 //Redirect all to root
 const router = require('./routes/index')

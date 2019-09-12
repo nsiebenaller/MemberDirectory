@@ -93,6 +93,10 @@ export function updateMember(member) {
   }
 }
 
+export function exportMembers() {
+  return call('GET', '/api/members/export')
+}
+
 function calculateBirthdays(members) {
   return async (dispatch, getState) => {
     const today = new Date()
