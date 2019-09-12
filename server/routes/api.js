@@ -79,23 +79,23 @@ router.route('/logout')
 
 router.route('/migrate')
   .get(async (req, res, next) => {
-    // const allMembers = await db.Member.findAll()
-    // allMembers.forEach((member) => {
-    //   const birthday = {
-    //     birth_day: null,
-    //     birth_month: null,
-    //     birth_fullyear: null
-    //   }
-    //   if(member.birth_date) {
-    //     const dateStr = member.birth_date.split('/')
-    //     birthday.birth_month = parseInt(dateStr[0])
-    //     birthday.birth_day = parseInt(dateStr[1])
-    //   }
-    //   if(member.birth_year) {
-    //     birthday.birth_fullyear = parseInt(member.birth_year)
-    //   }
-    //   member.update({ ...member, ...birthday })
-    // })
+    const allMembers = await db.Member.findAll()
+    allMembers.forEach((member) => {
+      const birthday = {
+        birth_day: null,
+        birth_month: null,
+        birth_fullyear: null
+      }
+      if(member.birth_date) {
+        const dateStr = member.birth_date.split('/')
+        birthday.birth_month = parseInt(dateStr[0])
+        birthday.birth_day = parseInt(dateStr[1])
+      }
+      if(member.birth_year) {
+        birthday.birth_fullyear = parseInt(member.birth_year)
+      }
+      member.update({ ...member, ...birthday })
+    })
     return res.status(200).send("OK")
   })
 

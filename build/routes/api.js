@@ -1,5 +1,7 @@
 'use strict';
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
@@ -124,13 +126,36 @@ router.route('/logout').get(function (req, res, next) {
 
 router.route('/migrate').get(function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(req, res, next) {
+    var allMembers;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
+            _context2.next = 2;
+            return _models2.default.Member.findAll();
+
+          case 2:
+            allMembers = _context2.sent;
+
+            allMembers.forEach(function (member) {
+              var birthday = {
+                birth_day: null,
+                birth_month: null,
+                birth_fullyear: null
+              };
+              if (member.birth_date) {
+                var dateStr = member.birth_date.split('/');
+                birthday.birth_month = parseInt(dateStr[0]);
+                birthday.birth_day = parseInt(dateStr[1]);
+              }
+              if (member.birth_year) {
+                birthday.birth_fullyear = parseInt(member.birth_year);
+              }
+              member.update(_extends({}, member, birthday));
+            });
             return _context2.abrupt('return', res.status(200).send("OK"));
 
-          case 1:
+          case 5:
           case 'end':
             return _context2.stop();
         }
