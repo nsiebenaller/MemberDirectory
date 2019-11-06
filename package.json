@@ -23,7 +23,7 @@
     "author": "NSiebenaller",
     "license": "GDIT",
     "dependencies": {
-        "axios": "^0.18.0",
+        "axios": "^0.19.0",
         "babel-plugin-transform-class-properties": "^6.24.1",
         "bluebird": "^3.5.0",
         "bunyan": "^1.8.10",
@@ -64,7 +64,7 @@
         "json-loader": "^0.5.7",
         "webpack": "^4.29.6",
         "webpack-dev-middleware": "^1.12.2",
-        "webpack-dev-server": "^3.1.10",
+        "webpack-dev-server": "^3.1.11",
         "webpack-hot-middleware": "^2.24.3"
     }
 }
