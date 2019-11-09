@@ -5,7 +5,12 @@ module.exports = (sequelize, DataTypes) => {
     color: DataTypes.STRING,
   }, {});
   Tag.associate = function(models) {
-    Tag.belongsToMany(models.Member, { as: 'Member', through: 'MemberTags', foreignKey: 'TagId', otherKey: 'MemberId'})
+    Tag.belongsToMany(models.Member, {
+      as: 'Member',
+      through: 'MemberTags',
+      foreignKey: 'TagId',
+      otherKey: 'MemberId',
+    })
   };
   return Tag;
 };

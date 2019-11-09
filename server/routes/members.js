@@ -10,11 +10,9 @@ router.route('/')
       include: [{
         model: db.Tag,
         as: 'tags',
-        through: {
-          attributes: [],
-        }
+        through: { attributes: [] }
       }]
-    })
+    });
     res.status(200).send(allMembers)
   })
 
@@ -45,19 +43,32 @@ router.route('/update')
 
 router.route('/add_tag')
   .post((req, res, next) => {
-  db.Member.findOne({where: {id: req.body.member_id}})
-    .then((obj) => {
-      db.Tag.findOne({where: {id: req.body.tag_id}})
-        .then((tag) => {
-          console.log(tag, obj)
-          obj.addTags(tag).then(() => {
-            res.status(200).send({success: true})
+    db.Member.findOne({where: {id: req.body.member_id}})
+      .then((obj) => {
+        db.Tag.findOne({where: {id: req.body.tag_id}})
+          .then((tag) => {
+            console.log(tag, obj)
+            obj.addTags(tag).then(() => {
+              res.status(200).send({success: true})
+            })
           })
-
         })
+      })
 
-    })
-})
+router.route('/remove_tag')
+  .post(async(req, res, next) => {
+    const member = await db.Member.findOne({
+      where: { id: req.body.member_id },
+      include: [{
+        model: db.Tag,
+        as: 'tags',
+        through: { attributes: [] }
+      }]
+    });
+    const tag = member.tags.filter(tag => tag.id === req.body.tag_id);
+    const resp = await member.removeTags(tag);
+    res.status(200).send({success: true});
+  })
 
 router.route('/export')
   .get(async (req, res, next) => {

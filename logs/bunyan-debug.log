@@ -591,3 +591,72 @@
 {"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":4758,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-06T01:40:46.118Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":4758,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-06T01:40:46.120Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":4758,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-06T01:40:46.120Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5365,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T19:35:42.949Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5365,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T19:35:42.950Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5365,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T19:35:42.950Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5413,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T19:40:11.461Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5413,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T19:40:11.462Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5413,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T19:40:11.462Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5442,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T19:42:43.255Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5442,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T19:42:43.256Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5442,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T19:42:43.256Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5493,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T19:46:27.814Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5493,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T19:46:27.815Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5493,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T19:46:27.815Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5537,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T19:52:14.531Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5537,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T19:52:14.532Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5537,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T19:52:14.532Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5569,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T19:57:15.092Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5569,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T19:57:15.093Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5569,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T19:57:15.093Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5603,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T20:01:12.663Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5603,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T20:01:12.665Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5603,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T20:01:12.665Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5626,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T20:03:24.574Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5626,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T20:03:24.575Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5626,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T20:03:24.575Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5652,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T20:05:36.377Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5652,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T20:05:36.379Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5652,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T20:05:36.379Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5667,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T20:06:18.623Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5667,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T20:06:18.624Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5667,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T20:06:18.624Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5681,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T20:06:49.640Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5681,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T20:06:49.641Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5681,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T20:06:49.641Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5699,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T20:07:22.484Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5699,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T20:07:22.485Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5699,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T20:07:22.486Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5720,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T20:08:39.760Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5720,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T20:08:39.761Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5720,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T20:08:39.761Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5737,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T20:09:15.009Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5737,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T20:09:15.010Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5737,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T20:09:15.010Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5968,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T20:37:15.234Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5968,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T20:37:15.235Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":5968,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T20:37:15.235Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6107,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T20:56:53.013Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6107,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T20:56:53.015Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6107,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T20:56:53.015Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6123,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T20:58:06.211Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6123,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T20:58:06.213Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6123,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T20:58:06.213Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6140,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T20:59:32.697Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6140,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T20:59:32.698Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6140,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T20:59:32.699Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6161,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T21:02:09.245Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6161,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T21:02:09.246Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6161,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T21:02:09.246Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6178,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T21:02:49.362Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6178,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T21:02:49.363Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6178,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T21:02:49.363Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6193,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T21:03:15.860Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6193,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T21:03:15.862Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6193,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T21:03:15.862Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6216,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T21:05:45.094Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6216,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T21:05:45.095Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6216,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T21:05:45.095Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6233,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T21:06:31.950Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6233,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T21:06:31.951Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6233,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T21:06:31.951Z","v":0}

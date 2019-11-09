@@ -19,8 +19,13 @@ module.exports = (sequelize, DataTypes) => {
     birth_fullyear: DataTypes.INTEGER
   }, {});
   Member.associate = function(models) {
-    Member.belongsToMany(models.Tag, { as: 'tags', through: 'MemberTags', foreignKey: 'MemberId', otherKey: 'TagId'})
-    // associations can be defined here
+    Member.belongsToMany(models.Tag, {
+      as: 'tags',
+      through: 'MemberTags',
+      foreignKey: 'MemberId',
+      otherKey: 'TagId',
+      sourceKey: 'id'
+    })
   };
   return Member;
 };
