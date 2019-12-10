@@ -20,6 +20,16 @@ router.route('/new').post(function (req, res, next) {
   });
 });
 
+router.route('/delete').post(function (req, res, next) {
+  var tagID = req.body.tagID;
+
+  _models2.default.Tag.destroy({ where: { id: tagID } }).then(function (x) {
+    return res.status(200).send({ success: true });
+  }).catch(function (x) {
+    return res.status(200).send({ success: false });
+  });
+});
+
 router.route('/').get(function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(req, res, next) {
     var allTags;

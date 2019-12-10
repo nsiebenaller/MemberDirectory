@@ -4,15 +4,11 @@
     "description": "Directory application for managing members",
     "main": "./src/index.jsx",
     "scripts": {
-        "build-client": "webpack -p --progress",
-        "build-server": "babel ./server -d ./build",
+        "build": "babel ./server -d ./build",
         "clean": "rm -rf ./build",
         "start": "npm run build && babel-node server/server.js",
-        "client-old": "webpack --env.NODE_ENV=local --watch",
-        "client": "webpack-dev-server",
         "server": "babel-node server/server.js --presets es2015",
-        "dev": "concurrently \"npm run server\" \"npm run client\"",
-        "dev-server": "npm run server"
+        "dev": "npm run server"
     },
     "repository": "https://github.com/nsiebenaller/MemberDirectory",
     "keywords": [

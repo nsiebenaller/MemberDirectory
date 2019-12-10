@@ -28,9 +28,7 @@ router.route('/').get(function () {
               include: [{
                 model: _models2.default.Tag,
                 as: 'tags',
-                through: {
-                  attributes: []
-                }
+                through: { attributes: [] }
               }]
             });
 
@@ -79,24 +77,37 @@ router.route('/add_tag').post(function (req, res, next) {
   });
 });
 
-router.route('/export').get(function () {
+router.route('/remove_tag').post(function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(req, res, next) {
-    var members, csv;
+    var member, tag, resp;
     return regeneratorRuntime.wrap(function _callee2$(_context2) {
       while (1) {
         switch (_context2.prev = _context2.next) {
           case 0:
-            res.set('Content-Type', 'application/octet-stream');
-            _context2.next = 3;
-            return _models2.default.Member.findAll();
+            _context2.next = 2;
+            return _models2.default.Member.findOne({
+              where: { id: req.body.member_id },
+              include: [{
+                model: _models2.default.Tag,
+                as: 'tags',
+                through: { attributes: [] }
+              }]
+            });
 
-          case 3:
-            members = _context2.sent;
-            csv = (0, _helpers.formMemberCSV)(members);
-
-            res.send(csv);
+          case 2:
+            member = _context2.sent;
+            tag = member.tags.filter(function (tag) {
+              return tag.id === req.body.tag_id;
+            });
+            _context2.next = 6;
+            return member.removeTags(tag);
 
           case 6:
+            resp = _context2.sent;
+
+            res.status(200).send({ success: true });
+
+          case 8:
           case 'end':
             return _context2.stop();
         }
@@ -106,6 +117,36 @@ router.route('/export').get(function () {
 
   return function (_x4, _x5, _x6) {
     return _ref2.apply(this, arguments);
+  };
+}());
+
+router.route('/export').get(function () {
+  var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(req, res, next) {
+    var members, csv;
+    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            res.set('Content-Type', 'application/octet-stream');
+            _context3.next = 3;
+            return _models2.default.Member.findAll();
+
+          case 3:
+            members = _context3.sent;
+            csv = (0, _helpers.formMemberCSV)(members);
+
+            res.send(csv);
+
+          case 6:
+          case 'end':
+            return _context3.stop();
+        }
+      }
+    }, _callee3, undefined);
+  }));
+
+  return function (_x7, _x8, _x9) {
+    return _ref3.apply(this, arguments);
   };
 }());
 

@@ -660,3 +660,12 @@
 {"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6233,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-09T21:06:31.950Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6233,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-09T21:06:31.951Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6233,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-09T21:06:31.951Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6575,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-17T00:51:20.716Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6575,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-17T00:51:20.718Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":6575,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-17T00:51:20.718Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":8874,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-17T21:31:28.405Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":8874,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-17T21:31:28.406Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MBP.lan1","pid":8874,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-17T21:31:28.406Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":16436,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-28T02:38:56.787Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":16436,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-28T02:38:56.788Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":16436,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-28T02:38:56.788Z","v":0}
