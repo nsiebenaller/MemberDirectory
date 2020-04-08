@@ -9,3 +9,5 @@ node_modules/
 public/hot
 
 server/config/config.json
+
+logs/

@@ -47,7 +47,6 @@ router.route('/add_tag')
       .then((obj) => {
         db.Tag.findOne({where: {id: req.body.tag_id}})
           .then((tag) => {
-            console.log(tag, obj)
             obj.addTags(tag).then(() => {
               res.status(200).send({success: true})
             })
@@ -69,6 +68,23 @@ router.route('/remove_tag')
     const resp = await member.removeTags(tag);
     res.status(200).send({success: true});
   })
+
+router.route('/delete')
+.post(async(req, res, next) => {
+  const member = await db.Member.findOne({
+    where: { id: req.body.member_id },
+    include: [{
+      model: db.Tag,
+      as: 'tags',
+      through: { attributes: [] }
+    }]
+  });
+  const promises = []
+  member.tags.forEach((t) => promises.push(member.removeTags(t)))
+  await Promise.all(promises)
+  await member.destroy()
+  res.status(200).send({success: true});
+})
 
 router.route('/export')
   .get(async (req, res, next) => {

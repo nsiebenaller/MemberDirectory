@@ -120,24 +120,41 @@ router.route('/remove_tag').post(function () {
   };
 }());
 
-router.route('/export').get(function () {
+router.route('/delete').post(function () {
   var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(req, res, next) {
-    var members, csv;
+    var member, promises;
     return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
-            res.set('Content-Type', 'application/octet-stream');
-            _context3.next = 3;
-            return _models2.default.Member.findAll();
+            _context3.next = 2;
+            return _models2.default.Member.findOne({
+              where: { id: req.body.member_id },
+              include: [{
+                model: _models2.default.Tag,
+                as: 'tags',
+                through: { attributes: [] }
+              }]
+            });
 
-          case 3:
-            members = _context3.sent;
-            csv = (0, _helpers.formMemberCSV)(members);
+          case 2:
+            member = _context3.sent;
+            promises = [];
 
-            res.send(csv);
+            member.tags.forEach(function (t) {
+              return promises.push(member.removeTags(t));
+            });
+            _context3.next = 7;
+            return Promise.all(promises);
 
-          case 6:
+          case 7:
+            _context3.next = 9;
+            return member.destroy();
+
+          case 9:
+            res.status(200).send({ success: true });
+
+          case 10:
           case 'end':
             return _context3.stop();
         }
@@ -147,6 +164,36 @@ router.route('/export').get(function () {
 
   return function (_x7, _x8, _x9) {
     return _ref3.apply(this, arguments);
+  };
+}());
+
+router.route('/export').get(function () {
+  var _ref4 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(req, res, next) {
+    var members, csv;
+    return regeneratorRuntime.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            res.set('Content-Type', 'application/octet-stream');
+            _context4.next = 3;
+            return _models2.default.Member.findAll();
+
+          case 3:
+            members = _context4.sent;
+            csv = (0, _helpers.formMemberCSV)(members);
+
+            res.send(csv);
+
+          case 6:
+          case 'end':
+            return _context4.stop();
+        }
+      }
+    }, _callee4, undefined);
+  }));
+
+  return function (_x10, _x11, _x12) {
+    return _ref4.apply(this, arguments);
   };
 }());
 
