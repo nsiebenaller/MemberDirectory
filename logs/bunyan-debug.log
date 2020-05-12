@@ -669,3 +669,108 @@
 {"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":16436,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2019-11-28T02:38:56.787Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":16436,"level":30,"msg":"Member Directory v2.0.0","time":"2019-11-28T02:38:56.788Z","v":0}
 {"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":16436,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2019-11-28T02:38:56.788Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":7413,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-04-07T23:16:12.120Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":7413,"level":30,"msg":"Member Directory v2.0.0","time":"2020-04-07T23:16:12.122Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":7413,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-04-07T23:16:12.122Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":9302,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-04-07T23:29:35.546Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":9302,"level":30,"msg":"Member Directory v2.0.0","time":"2020-04-07T23:29:35.548Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":9302,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-04-07T23:29:35.548Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":9502,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-04-07T23:40:47.831Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":9502,"level":30,"msg":"Member Directory v2.0.0","time":"2020-04-07T23:40:47.832Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":9502,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-04-07T23:40:47.832Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":9586,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-04-07T23:45:15.706Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":9586,"level":30,"msg":"Member Directory v2.0.0","time":"2020-04-07T23:45:15.708Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":9586,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-04-07T23:45:15.708Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":9919,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-04-08T00:03:47.803Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":9919,"level":30,"msg":"Member Directory v2.0.0","time":"2020-04-08T00:03:47.804Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":9919,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-04-08T00:03:47.804Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4518,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-11T23:10:20.989Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4518,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-11T23:10:20.990Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4518,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-11T23:10:20.991Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4671,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-11T23:19:31.466Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4671,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-11T23:19:31.468Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4671,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-11T23:19:31.468Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4766,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-11T23:23:43.507Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4766,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-11T23:23:43.509Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4766,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-11T23:23:43.509Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4807,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-11T23:24:19.748Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4807,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-11T23:24:19.749Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4807,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-11T23:24:19.749Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4845,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-11T23:25:08.092Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4845,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-11T23:25:08.094Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4845,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-11T23:25:08.094Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4883,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-11T23:25:24.620Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4883,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-11T23:25:24.621Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4883,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-11T23:25:24.622Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4996,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-11T23:35:18.532Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4996,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-11T23:35:18.533Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":4996,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-11T23:35:18.534Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5068,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-11T23:39:09.774Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5068,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-11T23:39:09.775Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5068,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-11T23:39:09.775Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5135,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-11T23:43:14.829Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5135,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-11T23:43:14.831Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5135,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-11T23:43:14.831Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5328,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-11T23:56:24.543Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5328,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-11T23:56:24.543Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5328,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-11T23:56:24.544Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5387,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-11T23:57:09.693Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5387,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-11T23:57:09.694Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5387,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-11T23:57:09.694Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5444,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-11T23:57:40.568Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5444,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-11T23:57:40.568Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5444,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-11T23:57:40.568Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5529,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:00:29.412Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5529,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:00:29.412Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5529,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:00:29.413Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5590,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:02:21.522Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5590,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:02:21.522Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5590,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:02:21.522Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5632,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:02:54.701Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5632,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:02:54.702Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5632,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:02:54.702Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5688,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:03:50.286Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5688,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:03:50.286Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5688,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:03:50.287Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5737,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:04:30.704Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5737,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:04:30.704Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5737,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:04:30.704Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5783,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:05:05.525Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5783,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:05:05.525Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5783,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:05:05.525Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5845,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:06:12.451Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5845,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:06:12.452Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5845,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:06:12.452Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5907,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:06:56.017Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5907,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:06:56.018Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5907,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:06:56.018Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5956,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:08:33.186Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5956,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:08:33.187Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":5956,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:08:33.187Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6004,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:09:22.543Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6004,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:09:22.543Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6004,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:09:22.543Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6051,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:10:48.786Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6051,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:10:48.786Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6051,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:10:48.786Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6100,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:11:45.902Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6100,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:11:45.903Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6100,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:11:45.903Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6165,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:13:32.263Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6165,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:13:32.264Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6165,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:13:32.264Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6241,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:16:56.050Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6241,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:16:56.051Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6241,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:16:56.051Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6289,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:17:22.541Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6289,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:17:22.542Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6289,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:17:22.542Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6336,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:17:45.809Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6336,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:17:45.810Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6336,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:17:45.810Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6375,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:18:16.935Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6375,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:18:16.935Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6375,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:18:16.935Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6439,"level":30,"msg":"IS RUNNING IN DEV:: true","time":"2020-05-12T00:19:24.014Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6439,"level":30,"msg":"Member Directory v2.0.0","time":"2020-05-12T00:19:24.014Z","v":0}
+{"name":"general-log","hostname":"Nicholass-MacBook-Pro.local","pid":6439,"level":30,"msg":"==>  💻  API Listening on Port 8000  💻  <==","time":"2020-05-12T00:19:24.015Z","v":0}

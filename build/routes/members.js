@@ -4,11 +4,19 @@ var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
 
+var _fs = require('fs');
+
+var _fs2 = _interopRequireDefault(_fs);
+
 var _models = require('../models');
 
 var _models2 = _interopRequireDefault(_models);
 
 var _helpers = require('../helpers');
+
+var _puppeteer = require('puppeteer');
+
+var _puppeteer2 = _interopRequireDefault(_puppeteer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -69,7 +77,6 @@ router.route('/update').post(function (req, res, next) {
 router.route('/add_tag').post(function (req, res, next) {
   _models2.default.Member.findOne({ where: { id: req.body.member_id } }).then(function (obj) {
     _models2.default.Tag.findOne({ where: { id: req.body.tag_id } }).then(function (tag) {
-      console.log(tag, obj);
       obj.addTags(tag).then(function () {
         res.status(200).send({ success: true });
       });
@@ -194,6 +201,85 @@ router.route('/export').get(function () {
 
   return function (_x10, _x11, _x12) {
     return _ref4.apply(this, arguments);
+  };
+}());
+
+var startHTML = '\n<html>\n    <head>\n        <style>\n          @media print {\n            body {\n                display: flex;\n                flex-wrap: wrap;\n            }\n            .item {\n                width: 40%;\n                height: 51px;\n                padding-top: 42px;\n                padding-left: 30px;\n                padding-right: 30px;\n                padding-bottom: 50px;\n            }\n          }\n        </style>\n    </head>\n    <body>';
+
+var endHTML = '</body></html>';
+
+function getItem(member) {
+  return '\n    <div class="item">\n      <div>' + member.first_name + ' ' + member.last_name + '</div>\n      <div>' + member.address + '</div>\n      <div>' + member.city + ', ' + member.state + ' ' + member.zip + '</div>\n      <div>' + (member.email || "") + '</div>\n      <div>' + (member.phone || "") + '</div>\n    </div>\n  ';
+}
+
+router.route("/export_pdf").get(function () {
+  var _ref5 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee5(req, res, next) {
+    var allMembers, html, filePath, browser, page;
+    return regeneratorRuntime.wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.next = 2;
+            return _models2.default.Member.findAll({
+              include: [{
+                model: _models2.default.Tag,
+                as: 'tags',
+                through: { attributes: [] }
+              }]
+            });
+
+          case 2:
+            allMembers = _context5.sent;
+
+
+            // Form HTML    
+            html = startHTML;
+
+            allMembers.forEach(function (member) {
+              return html += getItem(member);
+            });
+            html += endHTML;
+
+            filePath = "export.pdf";
+            _context5.next = 9;
+            return _puppeteer2.default.launch();
+
+          case 9:
+            browser = _context5.sent;
+            _context5.next = 12;
+            return browser.newPage();
+
+          case 12:
+            page = _context5.sent;
+            _context5.next = 15;
+            return page.setContent(html);
+
+          case 15:
+            _context5.next = 17;
+            return page.pdf({ path: filePath, format: 'A4' });
+
+          case 17:
+            _context5.next = 19;
+            return browser.close();
+
+          case 19:
+
+            res.writeHead(200, {
+              "Content-Type": "application/octet-stream",
+              "Content-Disposition": "attachment; filename=" + filePath
+            });
+            _fs2.default.createReadStream(filePath).pipe(res);
+
+          case 21:
+          case 'end':
+            return _context5.stop();
+        }
+      }
+    }, _callee5, undefined);
+  }));
+
+  return function (_x13, _x14, _x15) {
+    return _ref5.apply(this, arguments);
   };
 }());
 

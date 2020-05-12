@@ -17,17 +17,6 @@ const cookieParser = require('cookie-parser')
 const app = express()
 app.use(cookieParser())
 
-// if(IS_DEV === 'true') {
-//   const webpackDevMiddleware = require("webpack-dev-middleware")
-//   const webpackHotMiddleware = require("webpack-hot-middleware")
-//   var webpackConfig = require('../webpack.config.js')
-//   var compiler = webpack(webpackConfig);
-//   app.use(require("webpack-dev-middleware")(compiler, {
-//       noInfo: true, publicPath: webpackConfig.output.publicPath
-//   }))
-//   app.use(require("webpack-hot-middleware")(compiler))
-// }
-
 app.use(express.json())
 app.use(require('helmet')()) // use helmet
 app.use(require('cors')()) // enable CORS

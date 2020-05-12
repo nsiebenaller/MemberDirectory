@@ -1,6 +1,8 @@
 import express from 'express'
+import fs from 'fs'
 import db from '../models'
 import { formMemberCSV } from '../helpers'
+import puppeteer from 'puppeteer'
 
 const router = express.Router()
 
@@ -93,5 +95,76 @@ router.route('/export')
     const csv = formMemberCSV(members)
     res.send(csv)
   })
+
+
+const startHTML = `
+<html>
+    <head>
+        <style>
+          @media print {
+            body {
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .item {
+                width: 40%;
+                height: 50px;
+                padding-top: 42px;
+                padding-left: 30px;
+                padding-right: 30px;
+                padding-bottom: 50px;
+            }
+          }
+        </style>
+    </head>
+    <body>`
+
+const endHTML = `</body></html>`
+
+function getItem(member) {
+  return(`
+    <div class="item">
+      <div>${member.first_name} ${member.last_name}</div>
+      <div>${member.address}</div>
+      <div>${member.city}, ${member.state} ${member.zip}</div>
+      <div>${member.email || ""}</div>
+      <div>${member.phone || ""}</div>
+    </div>
+  `)
+}
+
+router.route("/export_pdf")
+  .get(async(req, res, next) => {
+    // Get All Members
+    const allMembers = await db.Member.findAll({
+      include: [{
+        model: db.Tag,
+        as: 'tags',
+        through: { attributes: [] }
+      }]
+    })
+
+    // Form HTML    
+    let html = startHTML
+    allMembers.forEach((member) => html += getItem(member))
+    html += endHTML
+
+    const filePath = "export.pdf"
+    const browser = await puppeteer.launch()
+    const page = await browser.newPage()
+    await page.setContent(html)
+
+
+    await page.pdf({path: filePath, format: 'A4'});
+    await browser.close();
+
+    res.writeHead(200, {
+      "Content-Type": "application/octet-stream",
+      "Content-Disposition": "attachment; filename=" + filePath
+    })
+    fs.createReadStream(filePath).pipe(res)
+  })
+
+
 
 module.exports = router

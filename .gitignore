@@ -11,3 +11,5 @@ public/hot
 server/config/config.json
 
 logs/
+
+export.pdf
