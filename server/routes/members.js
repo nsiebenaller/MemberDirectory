@@ -149,6 +149,8 @@ router.route("/export_pdf")
     allMembers.forEach((member) => html += getItem(member))
     html += endHTML
 
+    //TODO: maybe use pdfmerger 
+
     const filePath = "export.pdf"
     const browser = await puppeteer.launch()
     const page = await browser.newPage()
